@@ -1,0 +1,269 @@
+---
+title: "Reproducible Data Science Workflows in Climate & Public Health Research"
+subtitle: "A practical guide for students in our lab"
+author: "Tinashe Tapera, Research Software Engineer"
+format: nes-revealjs
+transition: fade
+execute: 
+  eval: false
+---
+
+## Welcome 👋
+
+### Why we're here
+
+- Guide you to **sustainable**, **reproducible**, and **collaborative** workflows.
+- Orient you to using **Harvard FASRC**, not your laptop.
+- Introduce tools that help you **focus on science**, not logistics.
+
+---
+
+## The Problem with Local & Manual Workflows
+
+.pull-left[
+### Fragile Workflows:
+- Stored only on personal machines
+- Manual file movements (click-and-drag)
+- Outputs treated as "truth"
+- Hard to reproduce or share
+]
+
+.pull-right[
+![Broken workflow diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Old_computer_workflow.svg/512px-Old_computer_workflow.svg.png)
+]
+
+---
+
+## Our Lab's Philosophy 🧫
+
+- Prefer **remote + reproducible** over **local + manual**
+- Code, not outputs, should be the **source of truth**
+- Track your work with **Git**
+- Use **notebooks** to narrate your thinking
+- Embrace **cloud data access** (e.g. Google Drive)
+
+---
+
+## What We'll Cover Today
+
+| Tool | What You'll Learn |
+|------|-------------------|
+| FASRC | Remote computing, launching RStudio |
+| `here()` | Modular file paths |
+| `googledrive` + `pins` | Live data I/O from Google Drive |
+| R Notebooks | Narrated and reproducible analysis |
+| Git | Version control and collaboration |
+
+---
+
+## FASRC: Logging In & Launching RStudio
+
+1. Go to [https://portal.rc.fas.harvard.edu](https://portal.rc.fas.harvard.edu)
+2. Log in with HarvardKey
+3. Launch a **RStudio Server** session
+
+> 💡 Your work is now on a backed-up, high-performance server.
+
+---
+
+## Organize Projects with `here()`
+
+```r
+library(here)
+here("data", "input.csv")
+```
+
+- Use `here::here()` instead of "../" or "~/Downloads/"
+- Keeps paths **portable** and **self-documenting**
+- Helps build structured projects
+
+---
+
+## Literate Programming: Notebooks
+
+- Use **R Markdown** or **Quarto** notebooks
+- Combine:
+  - Code
+  - Outputs
+  - Narrative
+
+```markdown
+```{r}
+summary(lm(y ~ x, data = df))
+```
+```
+
+- Great for **supervisor meetings**, **review**, and **reproducibility**
+
+---
+
+## Accessing Google Drive with `pins`
+
+```r
+library(pins)
+
+board <- board_connect(name = "gdrive")
+df <- pin_read(board, "climate-data")
+```
+
+- Use `pins` to access shared files from Drive
+- Avoid manual downloads
+- Publish cleaned results back with:
+
+```r
+pin_write(board, summary_df, "climate-summary")
+```
+
+---
+
+## Benefits of Using `pins`
+
+📅 Always access the **latest version**  
+🚫 Avoid confusing file duplication  
+📆 Encourage **shared, reproducible** workflows  
+🚀 Use programmatically in R or Python
+
+---
+
+## Version Control with Git
+
+Why Git?
+
+- Track every change you make
+- Recover past versions
+- Collaborate without fear
+
+```bash
+git init
+git add analysis.Rmd
+git commit -m "Initial analysis"
+```
+
+> Start with `usethis::use_git()` in RStudio
+
+---
+
+## GitHub Integration
+
+- Create a private repo on GitHub
+- Link your local project:
+
+```bash
+git remote add origin https://github.com/yourname/project.git
+git push -u origin main
+```
+
+- Use issues and branches to track progress
+
+---
+
+## What Belongs on GitHub?
+
+### ✅ Safe to Share
+- Code (`.R`, `.Rmd`, `.qmd`, `.py`)
+- Environment files (`renv.lock`, `DESCRIPTION`, `.Rproj`)
+- Documentation (`README.md`)
+- Simulated / anonymized results
+
+### ❌ Do NOT Push
+- PII or protected health data
+- Raw survey or clinical data
+- Proprietary documents
+- `.csv` files with sensitive fields
+
+---
+
+## Demo: Safe Project on GitHub
+
+```bash
+git init
+git add analysis.qmd
+git commit -m "Initial reproducible analysis"
+git remote add origin https://github.com/your-lab/project-name
+git push -u origin main
+```
+
+💡 Use `.gitignore` to prevent leaking data:
+
+```bash
+# .gitignore
+data/
+results/*.rds
+```
+
+---
+
+## Where Should Outputs Go?
+
+| Type of File | Go To |
+|--------------|-------|
+| Analysis code, cleaned notebooks | **GitHub** |
+| Final tables for review (PII-safe) | **GitHub** or **Google Drive** |
+| Sensitive data outputs | **Google Drive via `pins`** |
+| Raw data from collaborators | **Google Drive (read-only)** |
+
+---
+
+## Coordinating Both Platforms
+
+### 1. Code on GitHub
+
+```r
+# analysis.qmd
+results <- my_analysis_function(data)
+saveRDS(results, here("results", "safe-output.rds"))
+```
+
+### 2. Sensitive Output to Google Drive
+
+```r
+library(pins)
+pin_write(board, results, "project-outputs/participant-summary", metadata = list(pi_only = TRUE))
+```
+
+✅ Supervisor can pull reproducible code from GitHub  
+✅ PI-only results are pushed to Drive with a note
+
+---
+
+## Takeaways: Sharing Is a Workflow
+
+- GitHub is your **open notebook**
+- Google Drive is your **PI-safe vault**
+- Using both helps keep you:
+  - Transparent
+  - Compliant
+  - Reproducible
+
+.tiny[Need help deciding? Ask your RSE or PI!]
+
+---
+
+## Recap: Your Sustainable Stack
+
+| Purpose | Tool |
+|--------|------|
+| Compute | FASRC + OpenOnDemand |
+| Programming | RStudio, JupyterLab |
+| Paths | `here()` |
+| Safe Data I/O | `pins`, `googledrive` |
+| Collaboration | Git + GitHub |
+| Sensitive Sharing | Google Drive |
+
+---
+
+## Your Next Steps 🧐
+
+✅ Log into FASRC and launch RStudio  
+✅ Set up a new Git-tracked R project  
+✅ Connect to Google Drive using `pins`  
+✅ Write your next analysis as a notebook  
+✅ Ask for help early & often!
+
+---
+
+## Questions?
+
+Let’s build workflows that work for science—and for you.
+
+.tiny[Contact: **ttapera@hsph.harvard.edu**]
