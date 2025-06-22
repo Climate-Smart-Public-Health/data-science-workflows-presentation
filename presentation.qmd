@@ -1,99 +1,375 @@
 ---
-title: "Reproducible Data Science Workflows in Climate & Public Health Research"
-subtitle: "A practical guide for students in our lab"
-author: "Tinashe Tapera, Research Software Engineer"
-format: nes-revealjs
+title: "Reproducible Data Science Workflows in Climate & Public Health Research<br>🌍🤖📊"
+subtitle: "A practical guide for students"
+author: "Tinashe M. Tapera, Research Software Engineer"
+date: 2025-06-24
+format: 
+  nes-revealjs:
+    theme:
+      - default
+      - styles.scss
+    incremental: true
+    preview-links: true
 transition: fade
 execute: 
   eval: false
+
+title-slide-attributes:
+  data-background-image: https://e1.pngegg.com/pngimages/905/302/png-clipart-the-ultimate-patrick-star-thumbnail.png
+  data-background-size: 10%
+  data-background-position: 95% 90%
+  data-background-opacity: "1"
+
+filters:
+   - include-code-files
 ---
 
 ## Welcome 👋
 
 ### Why we're here
 
-- Guide you to **sustainable**, **reproducible**, and **collaborative** workflows.
-- Orient you to using **Harvard FASRC**, not your laptop.
+
+- Guide you to *sustainable*, **reproducible**, and **collaborative** data science workflows.
+- Orient you to cluster computing using **Harvard FASRC**, not your laptop.
 - Introduce tools that help you **focus on science**, not logistics.
 
 ---
 
-## The Problem with Local & Manual Workflows
+## Meet Lou...
 
-.pull-left[
-### Fragile Workflows:
-- Stored only on personal machines
-- Manual file movements (click-and-drag)
-- Outputs treated as "truth"
-- Hard to reproduce or share
-]
+![Day 1 of grad school vs. Day ???](https://i.makeagif.com/media/10-20-2023/uvt-5m.gif)
 
-.pull-right[
-![Broken workflow diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Old_computer_workflow.svg/512px-Old_computer_workflow.svg.png)
-]
+- Lou is a graduate student who is excited to do the science
+- Eventually, Lou becomes tired, overworked, demotivated, and hungry
+- Lou's work suffers as he gets overwhelmed
+  - Not documenting sufficiently
+  - Manually moving files
+  - Hard-coding programming loops/recursion
+  - Running long code on a slow laptop
+  - Arbitrarily naming files and versions
 
 ---
 
-## Our Lab's Philosophy 🧫
+## Local & Manual Workflows are Fragile
+
+::: {.columns}
+::: {.column width="50%"}
+
+### Fragile Workflows ⛓️‍💥:
+- Stored only on personal machines
+- Manual file movements (click-and-drag)  
+- Impossible to reproduce or share 
+- Outputs treated as "truth"
+
+:::
+
+::: {.column width="50%"}
+
+### Robust Workflows 🔗:
+- Portable across systems and environments
+- Can be automated
+- Replicable & reproducible
+- Source of truth is the "how", not the "what"
+
+:::
+:::
+
+- [Robust workflows make doing the right thing the easy thing]{.yellow}
+
+---
+
+## Where is the source of truth? 🧐
+
+![](./figs/paper_title.png)
+
+::: {.columns}
+::: {.column width="50%"}
+- Claim: title
+- Evidence: data
+- Truth: **methods**
+:::
+
+::: {.column width="50%"}
+- ![](./figs/paper_methods.png)
+:::
+:::
+
+---
+
+## Proposing A Data Science Philosophy 💬
 
 - Prefer **remote + reproducible** over **local + manual**
 - Code, not outputs, should be the **source of truth**
-- Track your work with **Git**
 - Use **notebooks** to narrate your thinking
-- Embrace **cloud data access** (e.g. Google Drive)
+- Track your work with **Git**
+- Save on technical debt by investing in robust systems
+- ![](https://libapps.s3.amazonaws.com/accounts/310452/images/FAIR_data_principles.jpg)
+
 
 ---
 
-## What We'll Cover Today
+## What We'll Cover Today 📋
 
-| Tool | What You'll Learn |
-|------|-------------------|
-| FASRC | Remote computing, launching RStudio |
-| `here()` | Modular file paths |
-| `googledrive` + `pins` | Live data I/O from Google Drive |
-| R Notebooks | Narrated and reproducible analysis |
-| Git | Version control and collaboration |
+| Tool | What You'll Learn | |
+|------|-------------------|---|
+| Efficiency w/ FASRC | Remote computing, e.g. launching RStudio | <i class="nes-icon star is-small"></i> |
+| Literate programming w/ Notebooks | Narrated and reproducible scientific analysis | <i class="nes-icon star is-small"></i> |
+| Tracking and collaborating w/ Git | Version control and collaboration | <i class="nes-icon star is-small"></i> |
+| Modularity w/ `here()` & `renv` | Modular file paths & packages | <i class="nes-icon star is-small"></i> |
+| Flexibility w/ `googledrive` + `pins` | Live data I/O from Google Drive | <i class="nes-icon star is-small"></i> |
 
 ---
 
-## FASRC: Logging In & Launching RStudio
+# <i class="nes-icon like is-medium"></i> Let's walkthrough the research process together...<i class="nes-icon like is-medium"></i>
 
-1. Go to [https://portal.rc.fas.harvard.edu](https://portal.rc.fas.harvard.edu)
-2. Log in with HarvardKey
+---
+
+## {background-image="./figs/firstday.png"}
+
+---
+
+## FASRC: Logging In & Launching RStudio 🚀
+
+0. Get on the VPN
+1. Go to [https://rcood.rc.fas.harvard.edu](https://rcood.rc.fas.harvard.edu)
+2. Log in with FASRC Account details
 3. Launch a **RStudio Server** session
-
-> 💡 Your work is now on a backed-up, high-performance server.
+4. Create and save an R file
 
 ---
 
-## Organize Projects with `here()`
+## {background-image="https://media1.tenor.com/m/E2CbHRInEb4AAAAC/spongebob-speech.gif"}
 
+::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
+> [<i class="nes-icon trophy is-largs"></i> Your work is now on a backed-up, high-performance server.]{.red}
+:::
+
+---
+
+## {background-image="https://preview.redd.it/8jwzztybumg71.jpg?width=1080&crop=smart&auto=webp&s=9bc458daf052cb209db9ab50b3558ef7082ee49d"}
+
+::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
+> [OH NO‼️ MY INTERNET WENT DOWN/FIREFOX CRASHED/MY LAPTOP WAS EATEN BY NEMATOADS ‼️]{.yellow}
+:::
+
+---
+
+## Workflow Benefit #1: High Performance Computing<i class="nes-icon star is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> {background-image="https://media.tenor.com/PkFTmY4Ac4MAAAAM/spongebob-squarepants.gif" background-position="95% 90%" background-size="20%"}
+
+> [FASRC is a high performance computing resource whose professional responsibility is to save you (and your data) from yourself]{.yellow style="background: rgba(0, 0, 0, 0.7)"}
+
+- OpenOnDemand [sessions persist]{.green} as long as the job is specified
+- File permissions mechanisms are [specific and deliberate]{.green}
+- Software will [(likely) never crash]{.red} due to a mistake on your part
+- You will [(likely) never break]{.red} FASRC
+
+---
+
+## {background-image="https://i.ytimg.com/vi/C3u-Mz8-dhQ/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGH8gFygXMA8=&rs=AOn4CLCRDr5lXEtFixn4GXSob5bMlHoeiA"}
+
+::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
+> [Let's go back to our work from yesterday... wait, what was I doing again...?]{.yellow}
+:::
+
+---
+
+## Literate Programming with Notebooks
+
+> "💡Good documentation is like a love letter to your future self"
+
+- Literate programming is the use of intertwined written language to self-document and explain code.
+
+- A program's source code is made primarily to be read and understood by other people, and secondarily to be executed by the computer.
+
+- In data science, we use **Quarto, RMarkdown, or JuPyter Notebooks** to combine:
+  - Narrative
+  - Code
+  - Outputs
+
+---
+
+## {background-image="https://i.imgflip.com/2uz7w6.png?a486048" background-position="20% 50%" background-size="60%"}
+
+::: {.columns}
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+:::{.fragment}
+
+```{.r include="figs/_example.r"}
+```
+
+:::
+
+:::{.fragment}
+
+```{.markdown include="figs/_example.qmd"}
+```
+
+:::
+:::
+:::
+
+---
+
+## Workflow Benefit #2: Notebooks<i class="nes-icon star is-small"></i> <i class="nes-icon star is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i>
+::: {.columns}
+::: {.column width="50%"}
+![](/figs/example_rendered.png)
+:::
+
+::: {.column width="50%"}
+
+- Notebooks provide **narrative context**, **code**, and **outputs** in one place
+- Enable others (and your future self) to understand and reproduce your work
+- Great for **supervisor meetings**, **review**, and **sharing**
+- Encourage "writing as thinking"
+
+:::
+:::
+
+---
+
+## Notebooks aren't just for code outputs... {background-image="https://media1.tenor.com/m/iI-3M1SYPlwAAAAd/sponge-bob-wow.gif" background-position="50% 70%" background-size="15%"}
+
+::: {.fragment style="position: absolute; top: 15%; left: 5%; width: 20%;"}
+![Reports in pdf, word, and html](https://datascience.arizona.edu/sites/default/files/styles/az_large/public/2022-08/horst_quarto_schematic.png.webp?itok=KtFxH5hY)
+:::
+
+::: {.fragment style="position: absolute; top: 10%; left: 60%; width: 25%;"}
+![Dashboards for data analysis](https://quarto.org/docs/dashboards/examples/thumbnails/penguins-dashboard.png)
+:::
+
+::: {.fragment style="position: absolute; top: 75%; left: 70%; width: 20%;"}
+![More dashboards](https://quarto.org/docs/interactive/shiny/images/iris-k-means.png)
+:::
+
+::: {.fragment style="position: absolute; top: 35%; left: 85%; width: 18%;"}
+![Even more dashboards](https://shiny.posit.co/py/docs/assets/tipping-dashboard.png)
+:::
+
+::: {.fragment style="position: absolute; top: 40%; left: 2%; width: 20%;"}
+![Interactive maps](https://quarto.org/docs/interactive/images/article-input-panel-columns.png)
+:::
+
+::: {.fragment style="position: absolute; top: 30%; left: 37%; width: 20%;"}
+![Blogs](https://www.crumplab.com/blog/post_886_10_14_22_quartoProjects/images/Screen%20Shot%202022-10-14%20at%202.40.43%20PM.png)
+:::
+
+::: {.fragment style="position: absolute; top: 30%; left: 15%; width: 25%;"}
+![Organizational websites](https://openscapes.org/blog/2023-08-03-openscapes-website/media/old_site.png)
+:::
+
+::: {.fragment style="position: absolute; top: 70%; left: 10%; width: 15%;"}
+![Books](https://r4ds.hadley.nz/cover.jpg)
+:::
+
+::: {.fragment style="position: absolute; top: 65%; left: 30%; width: 40%;"}
+![More books](https://quarto.org/docs/gallery/books/geocompy.png)
+:::
+
+::: {.fragment style="position: absolute; top: 5%; left: 40%; width: 20%;"}
+![Manuscripts!](https://i.ytimg.com/vi/NK1onTLcgY4/maxresdefault.jpg)
+:::
+
+::: {.fragment style="position: absolute; top: 50%; left: 38%; width: 40%;"}
+![A manuscrupt I've contributed to/authored](figs/_notebook_paper.png)
+:::
+
+::: {.fragment style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; font-weight: bold; background: rgba(0, 0, 0, 0.7); color: #FFD700; padding: 1rem 2rem; border-radius: 10px; z-index: 1000; text-align: center;"}
+🤯🤯🤯 
+
+THIS PRESENTATION IS A NOTEBOOK 
+:::
+
+---
+
+## {background-image="https://s1.dmcdn.net/v/BVezE1Lza7MnyfFWl/x1080"}
+
+::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
+> [Your lab mate knows you've run a regression on `mtcars` and wants to do the same,
+so you share your notebook with them, and...]{.dark-blue}
+:::
+
+---
+
+::: {.columns}
+::: {.column style="align: center; position: absolute; top: 25%; left: 0%"}
+![Your code](https://i0.wp.com/img1.joyreactor.com/pics/post/sponge-bob-sculpture-gif-208319.gif)
+:::
+
+::: {.column style="align: center; position: absolute; top: 5%; left: 50%"}
+::: {.fragment}
+![](https://forum.posit.co/uploads/default/optimized/3X/a/a/aa9ddc9e0f807cd494960f21dad04976d507ed5e_2_1024x448.png)
+
+![them running your code](https://i.makeagif.com/media/6-27-2019/pyAFCj.gif)
+:::
+:::
+:::
+
+---
+
+## Modularity in Data Science
+
+- 👯**Collaboration:** Modular code is easier for teams to understand, reuse, and extend.
+- How can you make your code more modular?
+  - 🧭**Portability of location:** Using tools like `here()` to manage file and document paths 
+  - 🏗️**Portability of dependencies:** Using tools like `renv` or `conda` to manage package dependencies
+  - 🎁**Portability of code components:** Using functions and modules so that code can be reused and tested independently
+- 📈**Scalability:** Modular workflows adapt easily to new data, collaborators, or computing environments.
+
+---
+
+## Organize Projects with `here()` and `config`
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+![](https://i2.wp.com/cdn-images-1.medium.com/max/786/1*fmEQAQ7H_cqAzwOPCIhv8w.png?w=584&ssl=1)
+
+- Use `here::here()` instead of `"../"` or `"~/Downloads/"`
+
+::: {.fragment}
 ```r
 library(here)
 here("data", "input.csv")
 ```
+:::
+:::
+::: {.column width="50%"}
+  
+- Use `config`s to manage paths outside of the project
 
-- Use `here::here()` instead of "../" or "~/Downloads/"
+::: {.fragment}
+```r
+library(config)
+
+# Define paths in config.yml (example):
+# default:
+#   data_dir: "/nfs/shared/data"
+#   results_dir: "/nfs/shared/results"
+#   madagascar:
+#       shapefile: "https://data.humdata.org/dataset/26fa506b-0727-4d9d-a590-d2abee21ee22/resource/ed94d52e-349e-41be-80cb-62dc0435bd34/download/mdg_adm_bngrc_ocha_20181031_shp.zip"
+
+
+cfg <- config::get()
+data_path <- file.path(cfg$data_dir, "input.csv")
+results_path <- file.path(cfg$results_dir, "output.csv")
+```
+:::
+
 - Keeps paths **portable** and **self-documenting**
-- Helps build structured projects
+
+- Helps build & maintain structured projects
+
+:::
+:::
+
 
 ---
 
-## Literate Programming: Notebooks
-
-- Use **R Markdown** or **Quarto** notebooks
-- Combine:
-  - Code
-  - Outputs
-  - Narrative
-
-```markdown
-```{r}
-summary(lm(y ~ x, data = df))
-```
-```
-
-- Great for **supervisor meetings**, **review**, and **reproducibility**
 
 ---
 

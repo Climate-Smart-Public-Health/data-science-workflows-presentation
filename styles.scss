@@ -1,0 +1,13 @@
+/*-- scss:rules --*/
+
+.title-slide .slide-background-content::after {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 100px;
+  height: auto;
+  background-image: url("https://e1.pngegg.com/pngimages/905/302/png-clipart-the-ultimate-patrick-star-thumbnail.png"); // adjust path as needed
+  background-repeat: no-repeat;
+  background-size: contain;
+}

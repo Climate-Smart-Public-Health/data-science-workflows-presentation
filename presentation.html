@@ -8,8 +8,9 @@
 <link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="author" content="Tinashe Tapera, Research Software Engineer">
-  <title>Reproducible Data Science Workflows in Climate &amp; Public Health Research</title>
+  <meta name="author" content="Tinashe M. Tapera, Research Software Engineer">
+  <meta name="dcterms.date" content="2025-06-24">
+  <title>Reproducible Data Science Workflows in Climate &amp; Public Health Research 🌍🤖📊</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -94,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-695695f58da21f0b82689c6cc8760a3a.css">
+  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-51eb9744599dcbfd9ee3f45a4eaa2207.css">
   <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -191,128 +192,497 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Reproducible Data Science Workflows in Climate &amp; Public Health Research</h1>
-  <p class="subtitle">A practical guide for students in our lab</p>
+<section id="title-slide" data-background-image="https://e1.pngegg.com/pngimages/905/302/png-clipart-the-ultimate-patrick-star-thumbnail.png" data-background-opacity="1" data-background-position="95% 90%" data-background-size="10%" class="quarto-title-block center">
+  <h1 class="title">Reproducible Data Science Workflows in Climate &amp; Public Health Research<br>🌍🤖📊</h1>
+  <p class="subtitle">A practical guide for students</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Tinashe Tapera, Research Software Engineer 
+Tinashe M. Tapera, Research Software Engineer 
 </div>
 </div>
 </div>
 
+  <p class="date">2025-06-24</p>
 </section>
 <section id="welcome" class="slide level2">
 <h2>Welcome 👋</h2>
 <h3 id="why-were-here">Why we’re here</h3>
 <ul>
-<li>Guide you to <strong>sustainable</strong>, <strong>reproducible</strong>, and <strong>collaborative</strong> workflows.</li>
-<li>Orient you to using <strong>Harvard FASRC</strong>, not your laptop.</li>
-<li>Introduce tools that help you <strong>focus on science</strong>, not logistics.</li>
+<li class="fragment">Guide you to <em>sustainable</em>, <strong>reproducible</strong>, and <strong>collaborative</strong> data science workflows.</li>
+<li class="fragment">Orient you to cluster computing using <strong>Harvard FASRC</strong>, not your laptop.</li>
+<li class="fragment">Introduce tools that help you <strong>focus on science</strong>, not logistics.</li>
 </ul>
 </section>
-<section id="the-problem-with-local-manual-workflows" class="slide level2">
-<h2>The Problem with Local &amp; Manual Workflows</h2>
-<p>.pull-left[ ### Fragile Workflows: - Stored only on personal machines - Manual file movements (click-and-drag) - Outputs treated as “truth” - Hard to reproduce or share]</p>
-<p>.pull-right[ <img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Old_computer_workflow.svg/512px-Old_computer_workflow.svg.png" alt="Broken workflow diagram">]</p>
-</section>
-<section id="our-labs-philosophy" class="slide level2">
-<h2>Our Lab’s Philosophy 🧫</h2>
+<section id="meet-lou" class="slide level2">
+<h2>Meet Lou…</h2>
+
+<img data-src="https://i.makeagif.com/media/10-20-2023/uvt-5m.gif" class="r-stretch quarto-figure-center"><p class="caption">Day 1 of grad school vs.&nbsp;Day ???</p><ul>
+<li class="fragment">Lou is a graduate student who is excited to do the science</li>
+<li class="fragment">Eventually, Lou becomes tired, overworked, demotivated, and hungry</li>
+<li class="fragment">Lou’s work suffers as he gets overwhelmed
 <ul>
-<li>Prefer <strong>remote + reproducible</strong> over <strong>local + manual</strong></li>
-<li>Code, not outputs, should be the <strong>source of truth</strong></li>
-<li>Track your work with <strong>Git</strong></li>
-<li>Use <strong>notebooks</strong> to narrate your thinking</li>
-<li>Embrace <strong>cloud data access</strong> (e.g.&nbsp;Google Drive)</li>
+<li class="fragment">Not documenting sufficiently</li>
+<li class="fragment">Manually moving files</li>
+<li class="fragment">Hard-coding programming loops/recursion</li>
+<li class="fragment">Running long code on a slow laptop</li>
+<li class="fragment">Arbitrarily naming files and versions</li>
+</ul></li>
+</ul>
+</section>
+<section id="local-manual-workflows-are-fragile" class="slide level2">
+<h2>Local &amp; Manual Workflows are Fragile</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="fragile-workflows">Fragile Workflows ⛓️‍💥:</h3>
+<ul>
+<li class="fragment">Stored only on personal machines</li>
+<li class="fragment">Manual file movements (click-and-drag)<br>
+</li>
+<li class="fragment">Impossible to reproduce or share</li>
+<li class="fragment">Outputs treated as “truth”</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="robust-workflows">Robust Workflows 🔗:</h3>
+<ul>
+<li class="fragment">Portable across systems and environments</li>
+<li class="fragment">Can be automated</li>
+<li class="fragment">Replicable &amp; reproducible</li>
+<li class="fragment">Source of truth is the “how”, not the “what”</li>
+</ul>
+</div></div>
+<ul>
+<li class="fragment"><span class="yellow">Robust workflows make doing the right thing the easy thing</span></li>
+</ul>
+</section>
+<section id="where-is-the-source-of-truth" class="slide level2">
+<h2>Where is the source of truth? 🧐</h2>
+<p><img data-src="./figs/paper_title.png"></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment">Claim: title</li>
+<li class="fragment">Evidence: data</li>
+<li class="fragment">Truth: <strong>methods</strong></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><img data-src="./figs/paper_methods.png"></li>
+</ul>
+</div></div>
+</section>
+<section id="proposing-a-data-science-philosophy" class="slide level2">
+<h2>Proposing A Data Science Philosophy 💬</h2>
+<ul>
+<li class="fragment">Prefer <strong>remote + reproducible</strong> over <strong>local + manual</strong></li>
+<li class="fragment">Code, not outputs, should be the <strong>source of truth</strong></li>
+<li class="fragment">Use <strong>notebooks</strong> to narrate your thinking</li>
+<li class="fragment">Track your work with <strong>Git</strong></li>
+<li class="fragment">Save on technical debt by investing in robust systems</li>
+<li class="fragment"><img data-src="https://libapps.s3.amazonaws.com/accounts/310452/images/FAIR_data_principles.jpg"></li>
 </ul>
 </section>
 <section id="what-well-cover-today" class="slide level2">
-<h2>What We’ll Cover Today</h2>
+<h2>What We’ll Cover Today 📋</h2>
 <table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 67%">
+<col style="width: 10%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Tool</th>
 <th>What You’ll Learn</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>FASRC</td>
-<td>Remote computing, launching RStudio</td>
+<td>Efficiency w/ FASRC</td>
+<td>Remote computing, e.g.&nbsp;launching RStudio</td>
+<td><i class="nes-icon star is-small"></i></td>
 </tr>
 <tr class="even">
-<td><code>here()</code></td>
-<td>Modular file paths</td>
+<td>Literate programming w/ Notebooks</td>
+<td>Narrated and reproducible scientific analysis</td>
+<td><i class="nes-icon star is-small"></i></td>
 </tr>
 <tr class="odd">
-<td><code>googledrive</code> + <code>pins</code></td>
-<td>Live data I/O from Google Drive</td>
-</tr>
-<tr class="even">
-<td>R Notebooks</td>
-<td>Narrated and reproducible analysis</td>
-</tr>
-<tr class="odd">
-<td>Git</td>
+<td>Tracking and collaborating w/ Git</td>
 <td>Version control and collaboration</td>
+<td><i class="nes-icon star is-small"></i></td>
+</tr>
+<tr class="even">
+<td>Modularity w/ <code>here()</code> &amp; <code>renv</code></td>
+<td>Modular file paths &amp; packages</td>
+<td><i class="nes-icon star is-small"></i></td>
+</tr>
+<tr class="odd">
+<td>Flexibility w/ <code>googledrive</code> + <code>pins</code></td>
+<td>Live data I/O from Google Drive</td>
+<td><i class="nes-icon star is-small"></i></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="fasrc-logging-in-launching-rstudio" class="slide level2">
-<h2>FASRC: Logging In &amp; Launching RStudio</h2>
-<ol type="1">
-<li>Go to <a href="https://portal.rc.fas.harvard.edu">https://portal.rc.fas.harvard.edu</a></li>
-<li>Log in with HarvardKey</li>
-<li>Launch a <strong>RStudio Server</strong> session</li>
-</ol>
-<blockquote>
-<p>💡 Your work is now on a backed-up, high-performance server.</p>
-</blockquote>
+<section class="slide level2">
+
 </section>
-<section id="organize-projects-with-here" class="slide level2">
-<h2>Organize Projects with <code>here()</code></h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"input.csv"</span>)</span></code></pre></div>
+<section>
+<section id="lets-walkthrough-the-research-process-together" class="title-slide slide level1 center">
+<h1><i class="nes-icon like is-medium"></i> Let’s walkthrough the research process together…<i class="nes-icon like is-medium"></i></h1>
+
+</section>
+<section id="section" class="slide level2" data-background-image="./figs/firstday.png">
+<h2></h2>
+</section>
+<section id="fasrc-logging-in-launching-rstudio" class="slide level2">
+<h2>FASRC: Logging In &amp; Launching RStudio 🚀</h2>
+<ol start="0" type="1">
+<li class="fragment">Get on the VPN</li>
+<li class="fragment">Go to <a href="https://rcood.rc.fas.harvard.edu">https://rcood.rc.fas.harvard.edu</a></li>
+<li class="fragment">Log in with FASRC Account details</li>
+<li class="fragment">Launch a <strong>RStudio Server</strong> session</li>
+<li class="fragment">Create and save an R file</li>
+</ol>
+</section>
+<section id="section-1" class="slide level2" data-background-image="https://media1.tenor.com/m/E2CbHRInEb4AAAAC/spongebob-speech.gif">
+<h2></h2>
+<div class="fragment" style="background: rgba(0, 0, 0, 0.7)">
+<blockquote>
+<p><span class="red"><i class="nes-icon trophy is-largs"></i> Your work is now on a backed-up, high-performance server.</span></p>
+</blockquote>
+</div>
+</section>
+<section id="section-2" class="slide level2" data-background-image="https://preview.redd.it/8jwzztybumg71.jpg?width=1080&amp;crop=smart&amp;auto=webp&amp;s=9bc458daf052cb209db9ab50b3558ef7082ee49d">
+<h2></h2>
+<div class="fragment" style="background: rgba(0, 0, 0, 0.7)">
+<blockquote>
+<p><span class="yellow">OH NO‼️ MY INTERNET WENT DOWN/FIREFOX CRASHED/MY LAPTOP WAS EATEN BY NEMATOADS ‼️</span></p>
+</blockquote>
+</div>
+</section>
+<section id="workflow-benefit-1-high-performance-computing" class="slide level2" data-background-image="https://media.tenor.com/PkFTmY4Ac4MAAAAM/spongebob-squarepants.gif" data-background-position="95% 90%" data-background-size="20%">
+<h2>Workflow Benefit #1: High Performance Computing<i class="nes-icon star is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i></h2>
+<blockquote>
+<p><span class="yellow" style="background: rgba(0, 0, 0, 0.7)">FASRC is a high performance computing resource whose professional responsibility is to save you (and your data) from yourself</span></p>
+</blockquote>
 <ul>
-<li>Use <code>here::here()</code> instead of “../” or “~/Downloads/”</li>
-<li>Keeps paths <strong>portable</strong> and <strong>self-documenting</strong></li>
-<li>Helps build structured projects</li>
+<li class="fragment">OpenOnDemand <span class="green">sessions persist</span> as long as the job is specified</li>
+<li class="fragment">File permissions mechanisms are <span class="green">specific and deliberate</span></li>
+<li class="fragment">Software will <span class="red">(likely) never crash</span> due to a mistake on your part</li>
+<li class="fragment">You will <span class="red">(likely) never break</span> FASRC</li>
 </ul>
 </section>
-<section id="literate-programming-notebooks" class="slide level2">
-<h2>Literate Programming: Notebooks</h2>
+<section id="section-3" class="slide level2" data-background-image="https://i.ytimg.com/vi/C3u-Mz8-dhQ/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGH8gFygXMA8=&amp;rs=AOn4CLCRDr5lXEtFixn4GXSob5bMlHoeiA">
+<h2></h2>
+<div class="fragment" style="background: rgba(0, 0, 0, 0.7)">
+<blockquote>
+<p><span class="yellow">Let’s go back to our work from yesterday… wait, what was I doing again…?</span></p>
+</blockquote>
+</div>
+</section>
+<section id="literate-programming-with-notebooks" class="slide level2">
+<h2>Literate Programming with Notebooks</h2>
+<blockquote>
+<p>“💡Good documentation is like a love letter to your future self”</p>
+</blockquote>
 <ul>
-<li>Use <strong>R Markdown</strong> or <strong>Quarto</strong> notebooks</li>
-<li>Combine:
+<li class="fragment"><p>Literate programming is the use of intertwined written language to self-document and explain code.</p></li>
+<li class="fragment"><p>A program’s source code is made primarily to be read and understood by other people, and secondarily to be executed by the computer.</p></li>
+<li class="fragment"><p>In data science, we use <strong>Quarto, RMarkdown, or JuPyter Notebooks</strong> to combine:</p>
 <ul>
-<li>Code</li>
-<li>Outputs</li>
-<li>Narrative</li>
+<li class="fragment">Narrative</li>
+<li class="fragment">Code</li>
+<li class="fragment">Outputs</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>::: {.cell}</span>
-<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+</section>
+<section id="section-4" class="slide level2" data-background-image="https://i.imgflip.com/2uz7w6.png?a486048" data-background-position="20% 50%" data-background-size="60%">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
+<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">wt =</span> <span class="fu">c</span>(<span class="fl">2.5</span>, <span class="fl">3.0</span>, <span class="fl">3.5</span>), <span class="at">hp =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>))</span>
+<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> new_data)</span>
+<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(new_data, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> hp)) <span class="sc">+</span></span>
+<span id="cb1-9"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-10"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(predictions, <span class="dv">2</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Predicted MPG based on Weight and Horsepower"</span>,</span>
+<span id="cb1-13"><a href="" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Weight (1000 lbs)"</span>,</span>
+<span id="cb1-14"><a href="" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Horsepower"</span>)</span>
+<span id="cb1-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot)</span></code></pre></div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My fantastic analysis"</span></span>
+<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> now</span></span>
+<span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Squidward P. Tentacles"</span></span>
+<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="" aria-hidden="true" tabindex="-1"></a>In this analysis I'm going to use the <span class="in">`mtcars`</span> dataset to</span>
+<span id="cb2-9"><a href="" aria-hidden="true" tabindex="-1"></a>demonstrate regression and prediction.</span>
+<span id="cb2-10"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Libraries</span></span>
+<span id="cb2-12"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="" aria-hidden="true" tabindex="-1"></a>Here are the necessary libraries you'll need to replicate this...</span>
+<span id="cb2-14"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-18"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Fitting the model</span></span>
+<span id="cb2-20"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="" aria-hidden="true" tabindex="-1"></a>I chose to use the <span class="in">`wt`</span> an <span class="in">`hp`</span> variables as predictors because blah blah blah...</span>
+<span id="cb2-22"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-24"><a href="" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
+<span id="cb2-25"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-26"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Predict on New Data</span></span>
+<span id="cb2-28"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="" aria-hidden="true" tabindex="-1"></a>I'm creating some new data to predict on...</span>
+<span id="cb2-30"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-32"><a href="" aria-hidden="true" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">wt =</span> <span class="fu">c</span>(<span class="fl">2.5</span>, <span class="fl">3.0</span>, <span class="fl">3.5</span>), <span class="at">hp =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>))</span>
+<span id="cb2-33"><a href="" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> new_data)</span>
+<span id="cb2-34"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-35"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="" aria-hidden="true" tabindex="-1"></a>And plotting it with ggplot:</span>
+<span id="cb2-37"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-38"><a href="" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(new_data, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> hp)) <span class="sc">+</span></span>
+<span id="cb2-39"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb2-40"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb2-41"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(predictions, <span class="dv">2</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb2-42"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Predicted MPG based on Weight and Horsepower"</span>,</span>
+<span id="cb2-43"><a href="" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Weight (1000 lbs)"</span>,</span>
+<span id="cb2-44"><a href="" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Horsepower"</span>)</span>
+<span id="cb2-45"><a href="" aria-hidden="true" tabindex="-1"></a>plot</span>
+<span id="cb2-46"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-47"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb2-49"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="" aria-hidden="true" tabindex="-1"></a>In this notebook I ran an experiment and documented it so that next time</span>
+<span id="cb2-51"><a href="" aria-hidden="true" tabindex="-1"></a>I or someone else sees it they can know exactly what I did</span>
+<span id="cb2-52"><a href="" aria-hidden="true" tabindex="-1"></a>and why 😁</span></code></pre></div>
+</div>
+</div></div>
+</section>
+<section id="workflow-benefit-2-notebooks" class="slide level2">
+<h2>Workflow Benefit #2: Notebooks<i class="nes-icon star is-small"></i> <i class="nes-icon star is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="./figs/example_rendered.png"></p>
+</div><div class="column" style="width:50%;">
 <ul>
-<li>Great for <strong>supervisor meetings</strong>, <strong>review</strong>, and <strong>reproducibility</strong></li>
+<li class="fragment">Notebooks provide <strong>narrative context</strong>, <strong>code</strong>, and <strong>outputs</strong> in one place</li>
+<li class="fragment">Enable others (and your future self) to understand and reproduce your work</li>
+<li class="fragment">Great for <strong>supervisor meetings</strong>, <strong>review</strong>, and <strong>sharing</strong></li>
+<li class="fragment">Encourage “writing as thinking”</li>
 </ul>
+</div></div>
+</section>
+<section id="notebooks-arent-just-for-code-outputs" class="slide level2" data-background-image="https://media1.tenor.com/m/iI-3M1SYPlwAAAAd/sponge-bob-wow.gif" data-background-position="50% 70%" data-background-size="15%">
+<h2>Notebooks aren’t just for code outputs…</h2>
+<div class="fragment" style="position: absolute; top: 15%; left: 5%; width: 20%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://datascience.arizona.edu/sites/default/files/styles/az_large/public/2022-08/horst_quarto_schematic.png.webp?itok=KtFxH5hY"></p>
+<figcaption>Reports in pdf, word, and html</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment" style="position: absolute; top: 10%; left: 60%; width: 25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://quarto.org/docs/dashboards/examples/thumbnails/penguins-dashboard.png"></p>
+<figcaption>Dashboards for data analysis</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment" style="position: absolute; top: 75%; left: 70%; width: 20%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://quarto.org/docs/interactive/shiny/images/iris-k-means.png"></p>
+<figcaption>More dashboards</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment" style="position: absolute; top: 35%; left: 85%; width: 18%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://shiny.posit.co/py/docs/assets/tipping-dashboard.png"></p>
+<figcaption>Even more dashboards</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment" style="position: absolute; top: 40%; left: 2%; width: 20%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://quarto.org/docs/interactive/images/article-input-panel-columns.png"></p>
+<figcaption>Interactive maps</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment" style="position: absolute; top: 30%; left: 37%; width: 20%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://www.crumplab.com/blog/post_886_10_14_22_quartoProjects/images/Screen%20Shot%202022-10-14%20at%202.40.43%20PM.png"></p>
+<figcaption>Blogs</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment" style="position: absolute; top: 30%; left: 15%; width: 25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://openscapes.org/blog/2023-08-03-openscapes-website/media/old_site.png"></p>
+<figcaption>Organizational websites</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment" style="position: absolute; top: 70%; left: 10%; width: 15%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://r4ds.hadley.nz/cover.jpg"></p>
+<figcaption>Books</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment" style="position: absolute; top: 65%; left: 30%; width: 40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://quarto.org/docs/gallery/books/geocompy.png"></p>
+<figcaption>More books</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment" style="position: absolute; top: 5%; left: 40%; width: 20%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://i.ytimg.com/vi/NK1onTLcgY4/maxresdefault.jpg"></p>
+<figcaption>Manuscripts!</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment" style="position: absolute; top: 50%; left: 38%; width: 40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/_notebook_paper.png"></p>
+<figcaption>A manuscrupt I’ve contributed to/authored</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; font-weight: bold; background: rgba(0, 0, 0, 0.7); color: #FFD700; padding: 1rem 2rem; border-radius: 10px; z-index: 1000; text-align: center;">
+<p>🤯🤯🤯</p>
+<p>THIS PRESENTATION IS A NOTEBOOK</p>
+</div>
+</section>
+<section id="section-5" class="slide level2" data-background-image="https://s1.dmcdn.net/v/BVezE1Lza7MnyfFWl/x1080">
+<h2></h2>
+<div class="fragment" style="background: rgba(0, 0, 0, 0.7)">
+<blockquote>
+<p><span class="dark-blue">Your lab mate knows you’ve run a regression on <code>mtcars</code> and wants to do the same, so you share your notebook with them, and…</span></p>
+</blockquote>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="align: center; position: absolute; top: 25%; left: 0%">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://i0.wp.com/img1.joyreactor.com/pics/post/sponge-bob-sculpture-gif-208319.gif"></p>
+<figcaption>Your code</figcaption>
+</figure>
+</div>
+</div><div class="column" style="align: center; position: absolute; top: 5%; left: 50%">
+<div class="fragment">
+<p><img data-src="https://forum.posit.co/uploads/default/optimized/3X/a/a/aa9ddc9e0f807cd494960f21dad04976d507ed5e_2_1024x448.png"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://i.makeagif.com/media/6-27-2019/pyAFCj.gif"></p>
+<figcaption>them running your code</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="modularity-in-data-science" class="slide level2">
+<h2>Modularity in Data Science</h2>
+<ul>
+<li class="fragment">👯<strong>Collaboration:</strong> Modular code is easier for teams to understand, reuse, and extend.</li>
+<li class="fragment">How can you make your code more modular?
+<ul>
+<li class="fragment">🧭<strong>Portability of location:</strong> Using tools like <code>here()</code> to manage file and document paths</li>
+<li class="fragment">🏗️<strong>Portability of dependencies:</strong> Using tools like <code>renv</code> or <code>conda</code> to manage package dependencies</li>
+<li class="fragment">🎁<strong>Portability of code components:</strong> Using functions and modules so that code can be reused and tested independently</li>
+</ul></li>
+<li class="fragment">📈<strong>Scalability:</strong> Modular workflows adapt easily to new data, collaborators, or computing environments.</li>
+</ul>
+</section>
+<section id="organize-projects-with-here-and-config" class="slide level2">
+<h2>Organize Projects with <code>here()</code> and <code>config</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="https://i2.wp.com/cdn-images-1.medium.com/max/786/1*fmEQAQ7H_cqAzwOPCIhv8w.png?w=584&amp;ssl=1"></p>
+<ul>
+<li class="fragment">Use <code>here::here()</code> instead of <code>"../"</code> or <code>"~/Downloads/"</code></li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"input.csv"</span>)</span></code></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment">Use <code>config</code>s to manage paths outside of the project</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(config)</span>
+<span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Define paths in config.yml (example):</span></span>
+<span id="cb4-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># default:</span></span>
+<span id="cb4-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">#   data_dir: "/nfs/shared/data"</span></span>
+<span id="cb4-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">#   results_dir: "/nfs/shared/results"</span></span>
+<span id="cb4-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">#   madagascar:</span></span>
+<span id="cb4-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">#       shapefile: "https://data.humdata.org/dataset/26fa506b-0727-4d9d-a590-d2abee21ee22/resource/ed94d52e-349e-41be-80cb-62dc0435bd34/download/mdg_adm_bngrc_ocha_20181031_shp.zip"</span></span>
+<span id="cb4-9"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="" aria-hidden="true" tabindex="-1"></a>cfg <span class="ot">&lt;-</span> config<span class="sc">::</span><span class="fu">get</span>()</span>
+<span id="cb4-12"><a href="" aria-hidden="true" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(cfg<span class="sc">$</span>data_dir, <span class="st">"input.csv"</span>)</span>
+<span id="cb4-13"><a href="" aria-hidden="true" tabindex="-1"></a>results_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(cfg<span class="sc">$</span>results_dir, <span class="st">"output.csv"</span>)</span></code></pre></div>
+</div>
+<ul>
+<li class="fragment"><p>Keeps paths <strong>portable</strong> and <strong>self-documenting</strong></p></li>
+<li class="fragment"><p>Helps build &amp; maintain structured projects</p></li>
+</ul>
+</div></div>
+</section>
+<section class="slide level2">
+
 </section>
 <section id="accessing-google-drive-with-pins" class="slide level2">
 <h2>Accessing Google Drive with <code>pins</code></h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pins)</span>
-<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a>board <span class="ot">&lt;-</span> <span class="fu">board_connect</span>(<span class="at">name =</span> <span class="st">"gdrive"</span>)</span>
-<span id="cb3-4"><a href="" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">pin_read</span>(board, <span class="st">"climate-data"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pins)</span>
+<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a>board <span class="ot">&lt;-</span> <span class="fu">board_connect</span>(<span class="at">name =</span> <span class="st">"gdrive"</span>)</span>
+<span id="cb5-4"><a href="" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">pin_read</span>(board, <span class="st">"climate-data"</span>)</span></code></pre></div>
 <ul>
-<li>Use <code>pins</code> to access shared files from Drive</li>
-<li>Avoid manual downloads</li>
-<li>Publish cleaned results back with:</li>
+<li class="fragment">Use <code>pins</code> to access shared files from Drive</li>
+<li class="fragment">Avoid manual downloads</li>
+<li class="fragment">Publish cleaned results back with:</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">pin_write</span>(board, summary_df, <span class="st">"climate-summary"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">pin_write</span>(board, summary_df, <span class="st">"climate-summary"</span>)</span></code></pre></div>
 </section>
 <section id="benefits-of-using-pins" class="slide level2">
 <h2>Benefits of Using <code>pins</code></h2>
@@ -325,13 +695,13 @@ Tinashe Tapera, Research Software Engineer
 <h2>Version Control with Git</h2>
 <p>Why Git?</p>
 <ul>
-<li>Track every change you make</li>
-<li>Recover past versions</li>
-<li>Collaborate without fear</li>
+<li class="fragment">Track every change you make</li>
+<li class="fragment">Recover past versions</li>
+<li class="fragment">Collaborate without fear</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add analysis.Rmd</span>
-<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial analysis"</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add analysis.Rmd</span>
+<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial analysis"</span></span></code></pre></div>
 <blockquote>
 <p>Start with <code>usethis::use_git()</code> in RStudio</p>
 </blockquote>
@@ -339,43 +709,43 @@ Tinashe Tapera, Research Software Engineer
 <section id="github-integration" class="slide level2">
 <h2>GitHub Integration</h2>
 <ul>
-<li>Create a private repo on GitHub</li>
-<li>Link your local project:</li>
+<li class="fragment">Create a private repo on GitHub</li>
+<li class="fragment">Link your local project:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/yourname/project.git</span>
-<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/yourname/project.git</span>
+<span id="cb8-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div>
 <ul>
-<li>Use issues and branches to track progress</li>
+<li class="fragment">Use issues and branches to track progress</li>
 </ul>
 </section>
 <section id="what-belongs-on-github" class="slide level2">
 <h2>What Belongs on GitHub?</h2>
 <h3 id="safe-to-share">✅ Safe to Share</h3>
 <ul>
-<li>Code (<code>.R</code>, <code>.Rmd</code>, <code>.qmd</code>, <code>.py</code>)</li>
-<li>Environment files (<code>renv.lock</code>, <code>DESCRIPTION</code>, <code>.Rproj</code>)</li>
-<li>Documentation (<code>README.md</code>)</li>
-<li>Simulated / anonymized results</li>
+<li class="fragment">Code (<code>.R</code>, <code>.Rmd</code>, <code>.qmd</code>, <code>.py</code>)</li>
+<li class="fragment">Environment files (<code>renv.lock</code>, <code>DESCRIPTION</code>, <code>.Rproj</code>)</li>
+<li class="fragment">Documentation (<code>README.md</code>)</li>
+<li class="fragment">Simulated / anonymized results</li>
 </ul>
 <h3 id="do-not-push">❌ Do NOT Push</h3>
 <ul>
-<li>PII or protected health data</li>
-<li>Raw survey or clinical data</li>
-<li>Proprietary documents</li>
-<li><code>.csv</code> files with sensitive fields</li>
+<li class="fragment">PII or protected health data</li>
+<li class="fragment">Raw survey or clinical data</li>
+<li class="fragment">Proprietary documents</li>
+<li class="fragment"><code>.csv</code> files with sensitive fields</li>
 </ul>
 </section>
 <section id="demo-safe-project-on-github" class="slide level2">
 <h2>Demo: Safe Project on GitHub</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add analysis.qmd</span>
-<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial reproducible analysis"</span></span>
-<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/your-lab/project-name</span>
-<span id="cb7-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add analysis.qmd</span>
+<span id="cb9-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial reproducible analysis"</span></span>
+<span id="cb9-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/your-lab/project-name</span>
+<span id="cb9-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div>
 <p>💡 Use <code>.gitignore</code> to prevent leaking data:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># .gitignore</span></span>
-<span id="cb8-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">data/</span></span>
-<span id="cb8-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">results/*.rds</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># .gitignore</span></span>
+<span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">data/</span></span>
+<span id="cb10-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">results/*.rds</span></span></code></pre></div>
 </section>
 <section id="where-should-outputs-go" class="slide level2">
 <h2>Where Should Outputs Go?</h2>
@@ -409,25 +779,25 @@ Tinashe Tapera, Research Software Engineer
 <section id="coordinating-both-platforms" class="slide level2">
 <h2>Coordinating Both Platforms</h2>
 <h3 id="code-on-github">1. Code on GitHub</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># analysis.qmd</span></span>
-<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">my_analysis_function</span>(data)</span>
-<span id="cb9-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(results, <span class="fu">here</span>(<span class="st">"results"</span>, <span class="st">"safe-output.rds"</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># analysis.qmd</span></span>
+<span id="cb11-2"><a href="" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">my_analysis_function</span>(data)</span>
+<span id="cb11-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(results, <span class="fu">here</span>(<span class="st">"results"</span>, <span class="st">"safe-output.rds"</span>))</span></code></pre></div>
 <h3 id="sensitive-output-to-google-drive">2. Sensitive Output to Google Drive</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pins)</span>
-<span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">pin_write</span>(board, results, <span class="st">"project-outputs/participant-summary"</span>, <span class="at">metadata =</span> <span class="fu">list</span>(<span class="at">pi_only =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pins)</span>
+<span id="cb12-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">pin_write</span>(board, results, <span class="st">"project-outputs/participant-summary"</span>, <span class="at">metadata =</span> <span class="fu">list</span>(<span class="at">pi_only =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
 <p>✅ Supervisor can pull reproducible code from GitHub<br>
 ✅ PI-only results are pushed to Drive with a note</p>
 </section>
 <section id="takeaways-sharing-is-a-workflow" class="slide level2">
 <h2>Takeaways: Sharing Is a Workflow</h2>
 <ul>
-<li>GitHub is your <strong>open notebook</strong></li>
-<li>Google Drive is your <strong>PI-safe vault</strong></li>
-<li>Using both helps keep you:
+<li class="fragment">GitHub is your <strong>open notebook</strong></li>
+<li class="fragment">Google Drive is your <strong>PI-safe vault</strong></li>
+<li class="fragment">Using both helps keep you:
 <ul>
-<li>Transparent</li>
-<li>Compliant</li>
-<li>Reproducible</li>
+<li class="fragment">Transparent</li>
+<li class="fragment">Compliant</li>
+<li class="fragment">Reproducible</li>
 </ul></li>
 </ul>
 <p>.tiny[Need help deciding? Ask your RSE or PI!]</p>
@@ -482,7 +852,7 @@ Tinashe Tapera, Research Software Engineer
 <p>Let’s build workflows that work for science—and for you.</p>
 <p>.tiny[Contact: <strong>ttapera@hsph.harvard.edu</strong>]</p>
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -641,7 +1011,7 @@ Tinashe Tapera, Research Software Engineer
         hideCursorTime: 5000,
 
         // Opens links in an iframe preview overlay
-        previewLinks: false,
+        previewLinks: true,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
         transition: 'fade',
@@ -698,44 +1068,6 @@ Tinashe Tapera, Research Software Engineer
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
