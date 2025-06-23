@@ -10,6 +10,7 @@ format:
       - styles.scss
     incremental: true
     preview-links: true
+    reference-location: document
 transition: fade
 execute: 
   eval: false
@@ -28,14 +29,15 @@ filters:
 
 ### Why we're here
 
+![](https://miro.medium.com/v2/resize:fit:908/1*AHK97CDrTLbTOE4qVYBtnQ.jpeg)
 
-- Guide you to *sustainable*, **reproducible**, and **collaborative** data science workflows.
+- Guide you to **sustainable**, **reproducible**, and **collaborative** data science workflows.
 - Orient you to cluster computing using **Harvard FASRC**, not your laptop.
-- Introduce tools that help you **focus on science**, not logistics.
+- Introduce principles and tools that help you **focus on science**, not logistics.
 
 ---
 
-## Meet Lou...
+## Meet Lou... {.smaller}
 
 ![Day 1 of grad school vs. Day ???](https://i.makeagif.com/media/10-20-2023/uvt-5m.gif)
 
@@ -50,12 +52,12 @@ filters:
 
 ---
 
-## Local & Manual Workflows are Fragile
+## Local & Manual Workflows are Fragile {.smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
 
-### Fragile Workflows ⛓️‍💥:
+### Fragile Workflows ⛓️:
 - Stored only on personal machines
 - Manual file movements (click-and-drag)  
 - Impossible to reproduce or share 
@@ -74,7 +76,7 @@ filters:
 :::
 :::
 
-- [Robust workflows make doing the right thing the easy thing]{.yellow}
+- Robust workflows make [doing the right thing the easy thing]{.yellow}
 
 ---
 
@@ -96,7 +98,7 @@ filters:
 
 ---
 
-## Proposing A Data Science Philosophy 💬
+## Proposing A Data Science Philosophy 💬 {.smaller}
 
 - Prefer **remote + reproducible** over **local + manual**
 - Code, not outputs, should be the **source of truth**
@@ -108,15 +110,16 @@ filters:
 
 ---
 
-## What We'll Cover Today 📋
+## What We'll Cover Today 📋 {.smaller}
 
-| Tool | What You'll Learn | |
-|------|-------------------|---|
-| Efficiency w/ FASRC | Remote computing, e.g. launching RStudio | <i class="nes-icon star is-small"></i> |
-| Literate programming w/ Notebooks | Narrated and reproducible scientific analysis | <i class="nes-icon star is-small"></i> |
-| Tracking and collaborating w/ Git | Version control and collaboration | <i class="nes-icon star is-small"></i> |
-| Modularity w/ `here()` & `renv` | Modular file paths & packages | <i class="nes-icon star is-small"></i> |
-| Flexibility w/ `googledrive` + `pins` | Live data I/O from Google Drive | <i class="nes-icon star is-small"></i> |
+| Principle          | Tool                                  | What You'll Learn                              | |
+|--------------------|----------------------------------------|------------------------------------------------|---|
+| **Efficiency**      | FASRC                                 | Remote computing     | <i class="nes-icon star is-small"></i> |
+| **Transparency**    | Notebooks       | Narrated and reproducible scientific analysis   | <i class="nes-icon star is-small"></i> |
+| **Modularity**      | `here()` + `renv`                     | Robust file paths & environment isolation   | <i class="nes-icon star is-small"></i> |
+| **Traceability**    | Git + GitHub                          | Version control and team collaboration    | <i class="nes-icon star is-small"></i> |
+| **Flexibility**      | `googledrive` + `pins`                | Reproducible I/O with shared cloud data     | <i class="nes-icon star is-small"></i> |
+
 
 ---
 
@@ -154,7 +157,7 @@ filters:
 
 ---
 
-## Workflow Benefit #1: High Performance Computing<i class="nes-icon star is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> {background-image="https://media.tenor.com/PkFTmY4Ac4MAAAAM/spongebob-squarepants.gif" background-position="95% 90%" background-size="20%"}
+## Workflow Benefit #1: Efficiency with High Performance Compute Clusters<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> {.smaller background-image="https://media.tenor.com/PkFTmY4Ac4MAAAAM/spongebob-squarepants.gif" background-position="95% 90%" background-size="20%"}
 
 > [FASRC is a high performance computing resource whose professional responsibility is to save you (and your data) from yourself]{.yellow style="background: rgba(0, 0, 0, 0.7)"}
 
@@ -170,30 +173,6 @@ filters:
 ::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
 > [Let's go back to our work from yesterday... wait, what was I doing again...?]{.yellow}
 :::
-
----
-
-### Literate Programming with Notebooks 🖼️
-
-0. Reopen RStudio session
-1. Convert your RScript to a notebook
-2. Add a YAML header to title, date, and sign your notebook
-3. Add a story to your script to explain what you're doing
-
----
-
-## Literate Programming with Notebooks🖼️
-
-> "💡Good documentation is like a love letter to your future self"
-
-- Literate programming is the use of intertwined written language to self-document and explain code.
-
-- A program's source code is made primarily to be read and understood by other people, and secondarily to be executed by the computer.
-
-- In data science, we use **Quarto, RMarkdown, or JuPyter Notebooks** to combine:
-  - Narrative
-  - Code
-  - Outputs
 
 ---
 
@@ -222,7 +201,31 @@ filters:
 
 ---
 
-## Workflow Benefit #2: Notebooks<i class="nes-icon star is-small"></i> <i class="nes-icon star is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i>
+### Literate Programming with Notebooks 🖼️
+
+0. Reopen RStudio session
+1. Convert your RScript to a notebook
+2. Add a YAML header to title, date, and sign your notebook
+3. Add a story to your script to explain what you're doing
+
+---
+
+## Literate Programming with Notebooks🖼️
+
+> "💡Good documentation is like a love letter to your future self"
+
+- Literate programming is the use of intertwined written language to self-document and explain code.
+
+- A program's source code is made primarily to be read and understood by other people, and secondarily to be executed by the computer.
+
+- In data science, we use **Quarto, RMarkdown, or JuPyter Notebooks** to combine:
+  - Narrative
+  - Code
+  - Outputs
+
+---
+
+## Workflow Benefit #2: Transparency with Notebooks<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i>
 ::: {.columns}
 ::: {.column width="50%"}
 ![](/figs/example_rendered.png)
@@ -297,12 +300,18 @@ THIS PRESENTATION IS A NOTEBOOK
 ## {background-image="https://s1.dmcdn.net/v/BVezE1Lza7MnyfFWl/x1080"}
 
 ::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
-> [Your lab mate knows you're good at regression and wants you to show them how to do it,
-so you share your notebook with them...]{.dark-blue}
+> [Your lab mate is not convinced that lm() and glm() are equivalent in `R`,
+so you decide to demo it and share your notebook with them...]{.dark-blue}
 :::
 
 ---
 
+## Modularity in Data Science 🗃️
+
+0. Open your analysis notebook
+1. Read data from an external URL
+2. Show that the two regression functions are equivalent
+3. Share the notebook so that they can try it for themselves
 
 ---
 
@@ -322,18 +331,7 @@ so you share your notebook with them...]{.dark-blue}
 
 ---
 
-## Modularity in Data Science
-
-- 👯**Collaboration:** Modular code is easier for teams to understand, reuse, and extend.
-- How can you make your code more modular?
-  - 🧭**Portability of location:** Using tools like `here()` to manage file and document paths 
-  - 🏗️**Portability of dependencies:** Using tools like `renv` or `conda` to manage package dependencies
-  - 🎁**Portability of code components:** Using functions and modules so that code can be reused and tested independently
-- 📈**Scalability:** Modular workflows adapt easily to new data, collaborators, or computing environments.
-
----
-
-## Organize Projects with `here()` and `config`
+## Organize Projects with `here()`, `config`s, and `renv` {.smaller}
 
 ::: {.columns}
 
@@ -353,205 +351,266 @@ here("data", "input.csv")
 ::: {.column width="50%"}
   
 - Use `config`s to manage paths outside of the project
-
-::: {.fragment}
-```r
-library(config)
-
-# Define paths in config.yml (example):
-# default:
-#   data_dir: "/nfs/shared/data"
-#   results_dir: "/nfs/shared/results"
-#   madagascar:
-#       shapefile: "https://data.humdata.org/dataset/26fa506b-0727-4d9d-a590-d2abee21ee22/resource/ed94d52e-349e-41be-80cb-62dc0435bd34/download/mdg_adm_bngrc_ocha_20181031_shp.zip"
-
-
-cfg <- config::get()
-data_path <- file.path(cfg$data_dir, "input.csv")
-results_path <- file.path(cfg$results_dir, "output.csv")
-```
-:::
-
 - Keeps paths **portable** and **self-documenting**
-
 - Helps build & maintain structured projects
 
+::: {.fragment}
+```yaml
+
+default:
+  data_dir: "/nfs/shared/data"
+  results_dir: "/nfs/shared/results"
+  madagascar:
+      shapefile: "https://data.humdata.org/dataset/26fa506b-0727-4d9d-a590-d2abee21ee22/resource/ed94d52e-349e-41be-80cb-62dc0435bd34/download/mdg_adm_bngrc_ocha_20181031_shp.zip"
+```
+:::
+
+- Use `renv` and/or `conda` to manage packages
+- Allows you to document exact package versions and dependencies for each project
+- Stores package metadata in a text file that can be version controlled and shared with your project
+
 :::
 :::
 
+---
+
+## Workflow Benefit #3: Modularity with path & package managers<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> {.smaller background-image="https://i.pinimg.com/474x/0b/f8/26/0bf8260956a55039f792eb382228991a.jpg" background-size="15%" background-position="80% 90%"}
+
+- 👯**Collaboration:** Modular code is easier for teams to understand, reuse, and extend.
+- How can you make your code more modular?
+  - 🧭**Portability of location:** Using tools like `here()` to manage file and document paths 
+  - 🏗️**Portability of dependencies:** Using tools like `renv` or `conda` to manage package dependencies
+  - 🎁**Portability of code components:** Using functions and modules so that code can be reused and tested independently
+- 📈**Scalability:** Modular workflows adapt easily to new data, collaborators, or computing environments.
+
 
 ---
 
+## {background-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHekKrZLguVOYXueX0CyhyLvNXmyB8V87CA87_RTwQGDc9SKmgi6hYq9JoCSMum8a0umw&usqp=CAU"}
+
+::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
+
+> It's time to publish your groundbreaking paper on the equivalence of [`glm`]{.yellow} and [`lm`]{.yellow}! You’ve run the analysis three times now: `fantastic_analysis_v3.R`, [`final_FINAL.Rmd`]{.yellow}, and [`FINAL_revised_with_comments_v2.qmd`]{.yellow}.
+
+:::
+
+::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
+
+> During a meeting, the PI asks:  
+
+:::
+
+::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
+> _“Can you show me what changed between the version we worked on 6 weeks ago and this one you sent me yesterday?”_
+
+![](https://media.tenor.com/Vi4nIBggYBMAAAAM/spongebob-exams.gif)
+:::
 
 ---
 
-## Accessing Google Drive with `pins`
+:::{.columns}
+:::{.column width=40%}
 
-```r
-library(pins)
+![](https://imgs.xkcd.com/comics/documents_2x.png)
 
-board <- board_connect(name = "gdrive")
-df <- pin_read(board, "climate-data")
-```
+:::
 
-- Use `pins` to access shared files from Drive
-- Avoid manual downloads
-- Publish cleaned results back with:
 
-```r
-pin_write(board, summary_df, "climate-summary")
-```
+:::{.column width=60%}
+![](http://www.phdcomics.com/comics/archive/phd101212s.gif)
+:::
+:::
 
 ---
 
-## Benefits of Using `pins`
-
-📅 Always access the **latest version**  
-🚫 Avoid confusing file duplication  
-📆 Encourage **shared, reproducible** workflows  
-🚀 Use programmatically in R or Python
-
----
-
-## Version Control with Git
+## Version Control with Git & GitHub <i class="nes-icon github is-medium"></i>
 
 Why Git?
 
 - Track every change you make
-- Recover past versions
+- Recover and understand past versions
 - Collaborate without fear
 
-```bash
-git init
-git add analysis.Rmd
-git commit -m "Initial analysis"
-```
-
-> Start with `usethis::use_git()` in RStudio
+:::{.fragment}
+![](https://geo-python-site.readthedocs.io/en/2022.0/_images/play-changes.PNG)
+:::
 
 ---
 
-## GitHub Integration
+## Version Control with Git & GitHub <i class="nes-icon github is-medium"></i>
 
-- Create a private repo on GitHub
-- Link your local project:
-
-```bash
-git remote add origin https://github.com/yourname/project.git
-git push -u origin main
-```
-
-- Use issues and branches to track progress
+0. Set up your GitHub Account with secure PATs
+1. Initialize a git repository for your project
+2. Track some changes
+3. "Push" the changes to GitHub for backup and sharing
 
 ---
 
-## What Belongs on GitHub?
+## Workflow Benefit #4: Traceability with Version Control<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> {.smaller background-image="https://www.gtplanet.net/forum/media/gif-the-first-verse-of-the-fun-song.31408/full" background-position="98% 2%" background-size="15%"}
 
-### ✅ Safe to Share
-- Code (`.R`, `.Rmd`, `.qmd`, `.py`)
-- Environment files (`renv.lock`, `DESCRIPTION`, `.Rproj`)
-- Documentation (`README.md`)
-- Simulated / anonymized results
+-	No more file clutter: Replace `final_v3_revised_REAL_FINAL.Rmd` with clean version tracking
 
-### ❌ Do NOT Push
-- PII or protected health data
-- Raw survey or clinical data
-- Proprietary documents
-- `.csv` files with sensitive fields
+-	Precise change history: Git tracks edits line by line — you know what changed, when, and why.
+
+-	Intentional work: Use git as a daily lab notebook where commits encourage reflection (what did I do today, and why?)
+
+-	Safe collaboration: Work in parallel without overwriting each other’s code using branches and pull requests. Experimentation is encouraged
+
+-	Work with the garage door up: Share your process early, even if it’s not polished. GitHub lets collaborators see your progress and offer feedback or help sooner
 
 ---
 
-## Demo: Safe Project on GitHub
+## {background-image="https://i.ytimg.com/vi/1PR-TaL6sGg/maxresdefault.jpg"}
 
-```bash
-git init
-git add analysis.qmd
-git commit -m "Initial reproducible analysis"
-git remote add origin https://github.com/your-lab/project-name
-git push -u origin main
-```
+::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
 
-💡 Use `.gitignore` to prevent leaking data:
+> You've spent all of this time working on reproducibility, but your collaborators
+simply do not care for it...
 
-```bash
-# .gitignore
-data/
-results/*.rds
-```
+:::
+
+::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
+
+> "This is so much overkill for a small analysis"
+
+:::
+
+::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
+
+> "I'm not a computer scientist I really don't care about any of this! I don't want to
+learn a new package"
+
+:::
+
+::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
+
+> Doing all of this is so slow! I can just use Excel, my old workflow has worked
+fine so far
+
+:::
 
 ---
 
-## Where Should Outputs Go?
+## I get it; it's a lot 😰 {.smaller}
 
-| Type of File | Go To |
+:::{.columns}
+
+:::{.column width=35%}
+![The reproducibility iceberg](https://raps-with-r.dev/images/repro_iceberg.png)
+
+:::
+
+:::{.column width=65%}
+- It's a learning process/investment with benefits accruing over time
+- Adopting these principles gradually is fine — start small, but start now.
+- These principles aren’t about using fancy tools — they’re about creating systems that are beneficial to your future self and your collaborators.
+- Labs that adopt reproducible workflows produce cleaner, more sustainable+trustworthy science.
+
+
+:::
+
+:::
+
+---
+
+## {background-image="./figs/excel_error2.png" background-size="40%" background-position="70% 10%"}
+
+Labs that don't...
+
+---
+
+## Reproducible collaboration requires compromise 🤝
+
+::: {.fragment}
+We want reproducibility.  
+They might want convenience.
+:::
+
+::: {.fragment}
+You can't force everyone to use Git, FASRC, Quarto, etc. all the time
+:::
+
+::: {.fragment}
+You can compromise — and still keep your workflow clean — by finding and implementing creative solutions.
+:::
+
+::: {.fragment}
+For e.g., the **`pins`** package 📌
+:::
+
+---
+
+## Accessing Google Drive with `pins`📌
+
+- Google Drive (and friends) don't neatly fit into the workflow (for reasons we've discussed)
+
+- How do you share data with outside Harvard collaborators?
+
+- How do you couple your data science to other academic workflows?
+
+- `pins` solves this by providing versioned programmatic access to Google, Box, OneDrive etc.
+
+- Treats data objects in R/Python as "pins" and online locations as "pinup boards"
+
+---
+
+## Accessing Google Drive with `pins`📌
+
+1. Create a board in R from the Google Drive
+2. Create a pin for your `glm()` results
+3. Pin your version to the board
+
+---
+
+## Workflow Benefit #5: Flexibility with `pins` and Google Drive<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i>
+
+- `pins` gives you:
+  - 🚀 Benefits of programmatic data science in R or Python
+  - 🤝 Collaboration of Google Drive
+  - 🪢 Coupling between your data science and the rest of your academic responsibilities
+
+- GitHub is your **open lab notebook**
+- Google Drive is your **PII-safe vault**
+- Use the tool that works best for the **file type** & **data restrictions**
+
+---
+
+## What Belongs Where? {.smaller}
+
+| Type of Data | Go To |
 |--------------|-------|
-| Analysis code, cleaned notebooks | **GitHub** |
-| Final tables for review (PII-safe) | **GitHub** or **Google Drive** |
-| Sensitive data outputs | **Google Drive via `pins`** |
-| Raw data from collaborators | **Google Drive (read-only)** |
+| 🔐 Raw data from collaborators | **Google Drive** & **FASRC** |
+| 💻 Analysis code (`.R`, `.Rmd`, `.qmd`, `.py`, plain text files) | **FASRC** & **GitHub** |
+| 🖼️ Notebooks, tables, plots, etc. for review (PII-safe) | **GitHub** or **Google Drive** |
+| ⚠️ Any form of sensitive intermediate outputs or code | **Google Drive** |
+| 🧼 Cleaned/shareable datasets | **FASRC** always; **Google Drive** if PII; **Dataverse** if anonymized |
 
 ---
 
-## Coordinating Both Platforms
+## Recap: Your Sustainable Stack {.smaller}
 
-### 1. Code on GitHub
+| Principle          | Tool                                  | What We Learned                              |
+|--------------------|----------------------------------------|------------------------------------------------|
+| **Efficiency**      | FASRC                                 | Remote computing     |
+| **Transparency**    | Notebooks       | Narrated and reproducible scientific analysis   |
+| **Modularity**      | `here()` + `renv`                     | Robust file paths & environment isolation   |
+| **Traceability**    | Git + GitHub                          | Version control and team collaboration    |
+| **Flexibility**      | `googledrive` + `pins`                | Reproducible I/O with shared cloud data     |
 
-```r
-# analysis.qmd
-results <- my_analysis_function(data)
-saveRDS(results, here("results", "safe-output.rds"))
-```
+![](https://libapps.s3.amazonaws.com/accounts/310452/images/FAIR_data_principles.jpg)
 
-### 2. Sensitive Output to Google Drive
+:::{.fragment .fade-in style="text-align: center;"}
 
-```r
-library(pins)
-pin_write(board, results, "project-outputs/participant-summary", metadata = list(pi_only = TRUE))
-```
+Congratulations! You've earned all 5 stars
 
-✅ Supervisor can pull reproducible code from GitHub  
-✅ PI-only results are pushed to Drive with a note
+<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i>
+:::
 
----
-
-## Takeaways: Sharing Is a Workflow
-
-- GitHub is your **open notebook**
-- Google Drive is your **PI-safe vault**
-- Using both helps keep you:
-  - Transparent
-  - Compliant
-  - Reproducible
-
-.tiny[Need help deciding? Ask your RSE or PI!]
 
 ---
 
-## Recap: Your Sustainable Stack
+## Thanks! Let's discuss... {background-image="https://media1.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif" background-size="40%" background-position="40% 70%"}
 
-| Purpose | Tool |
-|--------|------|
-| Compute | FASRC + OpenOnDemand |
-| Programming | RStudio, JupyterLab |
-| Paths | `here()` |
-| Safe Data I/O | `pins`, `googledrive` |
-| Collaboration | Git + GitHub |
-| Sensitive Sharing | Google Drive |
+- Let’s build workflows that work for robust science — and for you.
+- My goal is to enable _you_ to do your best work!
 
----
-
-## Your Next Steps 🧐
-
-✅ Log into FASRC and launch RStudio  
-✅ Set up a new Git-tracked R project  
-✅ Connect to Google Drive using `pins`  
-✅ Write your next analysis as a notebook  
-✅ Ask for help early & often!
-
----
-
-## Questions?
-
-Let’s build workflows that work for science—and for you.
-
-.tiny[Contact: **ttapera@hsph.harvard.edu**]

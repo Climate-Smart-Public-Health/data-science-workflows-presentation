@@ -1,6 +1,8 @@
 ---
 title: "My fantastic analysis"
-format: html
+format: 
+  html:
+    self-contained: true
 date: now
 author: "Squidward P. Tentacles"
 ---
@@ -50,17 +52,17 @@ plot
 Next we'll prove that regression the `glm` function is statistically equivalent to the `lm` function with a Gaussian distribution. Heres an example with the `salaries` dataset
 
 ```{r}
-#setwd("/n/holylabs/home/ttapera")
+setwd("/n/home03/ttapera/projects/data-science-workflows-presentation")
 dir.create("Downloads", showWarnings = FALSE)
 
-# Download the iris dataset from GitHub and save it into Downloads/
+# Download the dataset from and save it into Downloads/
 url <- "https://grodri.github.io/datasets/salary.dat"
 download.file(url, destfile = "Downloads/salary.dat", mode = "wb")
+
+salary_data <- read.table("Downloads/salary.dat", header=TRUE, stringsAsFactors = TRUE)
 ```
 
 ```{r}
-salary_data <- read.table("Downloads/salary.dat", header=TRUE, stringsAsFactors = TRUE)
-
 salary_lm_model <- lm(sl ~ dg + rk + sx + yr, data = salary_data)
 salary_glm_model <- glm(sl ~ dg + rk + sx + yr, data = salary_data, family="gaussian")
 summary(salary_lm_model)
