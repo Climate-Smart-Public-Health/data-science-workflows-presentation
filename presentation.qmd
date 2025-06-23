@@ -100,7 +100,7 @@ filters:
 
 - Prefer **remote + reproducible** over **local + manual**
 - Code, not outputs, should be the **source of truth**
-- Use **notebooks** to narrate your thinking
+- Narrate your thinking with **notebooks**
 - Track your work with **Git**
 - Save on technical debt by investing in robust systems
 - ![](https://libapps.s3.amazonaws.com/accounts/310452/images/FAIR_data_principles.jpg)
@@ -173,7 +173,16 @@ filters:
 
 ---
 
-## Literate Programming with Notebooks
+### Literate Programming with Notebooks 🖼️
+
+0. Reopen RStudio session
+1. Convert your RScript to a notebook
+2. Add a YAML header to title, date, and sign your notebook
+3. Add a story to your script to explain what you're doing
+
+---
+
+## Literate Programming with Notebooks🖼️
 
 > "💡Good documentation is like a love letter to your future self"
 
@@ -288,9 +297,12 @@ THIS PRESENTATION IS A NOTEBOOK
 ## {background-image="https://s1.dmcdn.net/v/BVezE1Lza7MnyfFWl/x1080"}
 
 ::: {.fragment style="background: rgba(0, 0, 0, 0.7)"}
-> [Your lab mate knows you've run a regression on `mtcars` and wants to do the same,
-so you share your notebook with them, and...]{.dark-blue}
+> [Your lab mate knows you're good at regression and wants you to show them how to do it,
+so you share your notebook with them...]{.dark-blue}
 :::
+
+---
+
 
 ---
 
