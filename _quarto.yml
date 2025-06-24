@@ -1,5 +1,13 @@
 project:
+  type: website
+
+website:
   title: "Data Science Workflows @ CSPH"
+  navbar:
+    left:
+      - file: index.qmd
+        text: "Slides"
 
-
+format:
+  nes-revealjs: default
 
