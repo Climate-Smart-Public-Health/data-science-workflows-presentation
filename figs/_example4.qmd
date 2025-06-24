@@ -47,6 +47,35 @@ plot <- ggplot(new_data, aes(x = wt, y = hp)) +
 plot
 ```
 
+## Equivalence of Gaussian GLM and LM 
+
+Next we'll prove that regression the `glm` function is statistically equivalent to the `lm` function with a Gaussian distribution. Heres an example with the `salaries` dataset
+
+```{r}
+install.packages("here")
+library(here)
+
+dir.create(here("Downloads"), showWarnings = FALSE)
+
+# Download the dataset from and save it into Downloads/
+url <- "https://grodri.github.io/datasets/salary.dat"
+download.file(url, destfile = here("Downloads/salary.dat"), mode = "wb")
+
+salary_data <- read.table(here("Downloads/salary.dat"), header=TRUE, stringsAsFactors = TRUE)
+```
+
+```{r}
+salary_lm_model <- lm(sl ~ dg + rk + sx + yr, data = salary_data)
+salary_glm_model <- glm(sl ~ dg + rk + sx + yr, data = salary_data, family="gaussian")
+summary(salary_lm_model)
+```
+
+This is equivalent to the GLM results:
+
+```{r}
+summary(salary_glm_model)
+```
+
 
 ## Conclusion
 
