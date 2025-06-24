@@ -5,8 +5,8 @@
 <script src="presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.29">
 
   <meta name="author" content="Tinashe M. Tapera, Research Software Engineer">
   <meta name="dcterms.date" content="2025-06-24">
@@ -29,8 +29,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -41,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -94,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-277ac14d909cab6e35967512d0a04e00.css">
+  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-51eb9744599dcbfd9ee3f45a4eaa2207.css">
   <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -205,16 +206,16 @@ Tinashe M. Tapera, Research Software Engineer
 
   <p class="date">2025-06-24</p>
 </section>
-<section id="welcome" class="slide level2">
+<section id="welcome" class="slide level2 smaller">
 <h2>Welcome 👋</h2>
 <h3 id="why-were-here">Why we’re here</h3>
-
-<img data-src="https://miro.medium.com/v2/resize:fit:908/1*AHK97CDrTLbTOE4qVYBtnQ.jpeg" class="r-stretch"><ul>
+<p><img data-src="https://miro.medium.com/v2/resize:fit:908/1*AHK97CDrTLbTOE4qVYBtnQ.jpeg"><a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></p>
+<ul>
 <li class="fragment">Guide you to <strong>sustainable</strong>, <strong>reproducible</strong>, and <strong>collaborative</strong> data science workflows.</li>
 <li class="fragment">Orient you to cluster computing using <strong>Harvard FASRC</strong>, not your laptop.</li>
 <li class="fragment">Introduce principles and tools that help you <strong>focus on science</strong>, not logistics.</li>
 </ul>
-</section>
+<aside></aside></section>
 <section id="meet-lou" class="slide level2 smaller">
 <h2>Meet Lou…</h2>
 
@@ -231,8 +232,8 @@ Tinashe M. Tapera, Research Software Engineer
 </ul></li>
 </ul>
 </section>
-<section id="local-manual-workflows-are-fragile" class="slide level2 smaller">
-<h2>Local &amp; Manual Workflows are Fragile</h2>
+<section class="slide level2">
+
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="fragile-workflows">Fragile Workflows ⛓️:</h3>
@@ -258,7 +259,7 @@ Tinashe M. Tapera, Research Software Engineer
 </section>
 <section id="where-is-the-source-of-truth" class="slide level2">
 <h2>Where is the source of truth? 🧐</h2>
-<p><img data-src="./figs/paper_title.png"></p>
+<p><img data-src="./figs/paper_title.png"><a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -271,7 +272,7 @@ Tinashe M. Tapera, Research Software Engineer
 <li class="fragment"><img data-src="./figs/paper_methods.png"></li>
 </ul>
 </div></div>
-</section>
+<aside></aside></section>
 <section id="proposing-a-data-science-philosophy" class="slide level2 smaller">
 <h2>Proposing A Data Science Philosophy 💬</h2>
 <ul>
@@ -280,9 +281,9 @@ Tinashe M. Tapera, Research Software Engineer
 <li class="fragment">Narrate your thinking with <strong>notebooks</strong></li>
 <li class="fragment">Track your work with <strong>Git</strong></li>
 <li class="fragment">Save on technical debt by investing in robust systems</li>
-<li class="fragment"><img data-src="https://libapps.s3.amazonaws.com/accounts/310452/images/FAIR_data_principles.jpg"></li>
+<li class="fragment"><img data-src="https://libapps.s3.amazonaws.com/accounts/310452/images/FAIR_data_principles.jpg"><a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a></li>
 </ul>
-</section>
+<aside></aside></section>
 <section id="what-well-cover-today" class="slide level2 smaller">
 <h2>What We’ll Cover Today 📋</h2>
 <table class="caption-top">
@@ -374,7 +375,7 @@ Tinashe M. Tapera, Research Software Engineer
 <section id="workflow-benefit-1-efficiency-with-high-performance-compute-clusters" class="slide level2 smaller" data-background-image="https://media.tenor.com/PkFTmY4Ac4MAAAAM/spongebob-squarepants.gif" data-background-position="95% 90%" data-background-size="20%">
 <h2>Workflow Benefit #1: Efficiency with High Performance Compute Clusters<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i></h2>
 <blockquote>
-<p><span class="yellow" style="background: rgba(0, 0, 0, 0.7)">FASRC is a high performance computing resource whose professional responsibility is to save you (and your data) from yourself</span></p>
+<p><span class="yellow" style="background: rgba(0, 0, 0, 0.7)">FASRC is a high performance computing resource whose professional responsibility is to save you (and your data) from yourself <a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a></span></p>
 </blockquote>
 <ul>
 <li class="fragment">OpenOnDemand <span class="green">sessions persist</span> as long as the job is specified</li>
@@ -382,7 +383,7 @@ Tinashe M. Tapera, Research Software Engineer
 <li class="fragment">Software will <span class="red">(likely) never crash</span> due to a mistake on your part</li>
 <li class="fragment">You will <span class="red">(likely) never break</span> FASRC</li>
 </ul>
-</section>
+<aside></aside></section>
 <section id="section-3" class="slide level2" data-background-image="https://i.ytimg.com/vi/C3u-Mz8-dhQ/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGH8gFygXMA8=&amp;rs=AOn4CLCRDr5lXEtFixn4GXSob5bMlHoeiA">
 <h2></h2>
 <div class="fragment" style="background: rgba(0, 0, 0, 0.7)">
@@ -432,7 +433,7 @@ Tinashe M. Tapera, Research Software Engineer
 <span id="cb2-15"><a href="" aria-hidden="true" tabindex="-1"></a>Here are the necessary libraries you'll need to replicate this...</span>
 <span id="cb2-16"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb2-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb2-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-20"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-21"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Fitting the model</span></span>
@@ -440,7 +441,7 @@ Tinashe M. Tapera, Research Software Engineer
 <span id="cb2-23"><a href="" aria-hidden="true" tabindex="-1"></a>I chose to use the <span class="in">`wt`</span> an <span class="in">`hp`</span> variables as predictors because blah blah blah...</span>
 <span id="cb2-24"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-25"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-26"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">model &lt;- lm(mpg ~ wt + hp, data = mtcars)</span></span>
+<span id="cb2-26"><a href="" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
 <span id="cb2-27"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-28"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-29"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Predict on New Data</span></span>
@@ -448,20 +449,20 @@ Tinashe M. Tapera, Research Software Engineer
 <span id="cb2-31"><a href="" aria-hidden="true" tabindex="-1"></a>I'm creating some new data to predict on...</span>
 <span id="cb2-32"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-33"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-34"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">new_data &lt;- data.frame(wt = c(2.5, 3.0, 3.5), hp = c(100, 150, 200))</span></span>
-<span id="cb2-35"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">predictions &lt;- predict(model, newdata = new_data)</span></span>
+<span id="cb2-34"><a href="" aria-hidden="true" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">wt =</span> <span class="fu">c</span>(<span class="fl">2.5</span>, <span class="fl">3.0</span>, <span class="fl">3.5</span>), <span class="at">hp =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>))</span>
+<span id="cb2-35"><a href="" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> new_data)</span>
 <span id="cb2-36"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-37"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-38"><a href="" aria-hidden="true" tabindex="-1"></a>And plotting it with ggplot:</span>
 <span id="cb2-39"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-40"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">plot &lt;- ggplot(new_data, aes(x = wt, y = hp)) +</span></span>
-<span id="cb2-41"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point() +</span></span>
-<span id="cb2-42"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_smooth(method = "lm", se = FALSE, color = "blue") +</span></span>
-<span id="cb2-43"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_text(aes(label = round(predictions, 2)), vjust = -1, color = "red") +</span></span>
-<span id="cb2-44"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(title = "Predicted MPG based on Weight and Horsepower",</span></span>
-<span id="cb2-45"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">       x = "Weight (1000 lbs)",</span></span>
-<span id="cb2-46"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">       y = "Horsepower")</span></span>
-<span id="cb2-47"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">plot</span></span>
+<span id="cb2-40"><a href="" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(new_data, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> hp)) <span class="sc">+</span></span>
+<span id="cb2-41"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb2-42"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb2-43"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(predictions, <span class="dv">2</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb2-44"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Predicted MPG based on Weight and Horsepower"</span>,</span>
+<span id="cb2-45"><a href="" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Weight (1000 lbs)"</span>,</span>
+<span id="cb2-46"><a href="" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Horsepower"</span>)</span>
+<span id="cb2-47"><a href="" aria-hidden="true" tabindex="-1"></a>plot</span>
 <span id="cb2-48"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-49"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-50"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
@@ -485,21 +486,21 @@ Tinashe M. Tapera, Research Software Engineer
 <section id="literate-programming-with-notebooks-1" class="slide level2">
 <h2>Literate Programming with Notebooks🖼️</h2>
 <blockquote>
-<p>“💡Good documentation is like a love letter to your future self”</p>
+<p>“💡Documentation is like a love letter you write to your future self” (Damien Conway) <a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a></p>
 </blockquote>
 <ul>
-<li class="fragment"><p>Literate programming is the use of intertwined written language to self-document and explain code.</p></li>
+<li class="fragment"><p>(Knuth, 1984 <a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a>) Literate programming is the use of intertwined written language to self-document and explain code.</p></li>
 <li class="fragment"><p>A program’s source code is made primarily to be read and understood by other people, and secondarily to be executed by the computer.</p></li>
-<li class="fragment"><p>In data science, we use <strong>Quarto, RMarkdown, or JuPyter Notebooks</strong> to combine:</p>
+<li class="fragment"><p>In data science, we use notebook tools like <strong>Quarto, RMarkdown, or JuPyter</strong> to combine:</p>
 <ul>
 <li class="fragment">Narrative</li>
 <li class="fragment">Code</li>
 <li class="fragment">Outputs</li>
 </ul></li>
 </ul>
-</section>
+<aside></aside></section>
 <section id="workflow-benefit-2-transparency-with-notebooks" class="slide level2">
-<h2>Workflow Benefit #2: Transparency with Notebooks<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i></h2>
+<h2>Workflow Benefit #2: Transparency with Notebooks <a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="./figs/example_rendered.png"></p>
@@ -511,7 +512,7 @@ Tinashe M. Tapera, Research Software Engineer
 <li class="fragment">Encourage “writing as thinking”</li>
 </ul>
 </div></div>
-</section>
+<aside></aside></section>
 <section id="notebooks-arent-just-for-code-outputs" class="slide level2" data-background-image="https://media1.tenor.com/m/iI-3M1SYPlwAAAAd/sponge-bob-wow.gif" data-background-position="50% 70%" data-background-size="15%">
 <h2>Notebooks aren’t just for code outputs…</h2>
 <div class="fragment" style="position: absolute; top: 15%; left: 5%; width: 20%;">
@@ -680,7 +681,7 @@ Tinashe M. Tapera, Research Software Engineer
 </div></div>
 </section>
 <section id="workflow-benefit-3-modularity-with-path-package-managers" class="slide level2 smaller" data-background-image="https://i.pinimg.com/474x/0b/f8/26/0bf8260956a55039f792eb382228991a.jpg" data-background-size="15%" data-background-position="80% 90%">
-<h2>Workflow Benefit #3: Modularity with path &amp; package managers<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i></h2>
+<h2>Workflow Benefit #3: Modularity with path &amp; package managers <a href="#/footnotes" class="footnote-ref" id="fnref8" role="doc-noteref" data-footnote-href="#/fn8" onclick=""><sup>8</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref9" role="doc-noteref" data-footnote-href="#/fn9" onclick=""><sup>9</sup></a><i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i></h2>
 <ul>
 <li class="fragment">👯<strong>Collaboration:</strong> Modular code is easier for teams to understand, reuse, and extend.</li>
 <li class="fragment">How can you make your code more modular?
@@ -691,7 +692,7 @@ Tinashe M. Tapera, Research Software Engineer
 </ul></li>
 <li class="fragment">📈<strong>Scalability:</strong> Modular workflows adapt easily to new data, collaborators, or computing environments.</li>
 </ul>
-</section>
+<aside></aside></section>
 <section id="section-6" class="slide level2" data-background-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHekKrZLguVOYXueX0CyhyLvNXmyB8V87CA87_RTwQGDc9SKmgi6hYq9JoCSMum8a0umw&amp;usqp=CAU">
 <h2></h2>
 <div class="fragment" style="background: rgba(0, 0, 0, 0.7)">
@@ -742,7 +743,7 @@ Tinashe M. Tapera, Research Software Engineer
 </ol>
 </section>
 <section id="workflow-benefit-4-traceability-with-version-control" class="slide level2 smaller" data-background-image="https://www.gtplanet.net/forum/media/gif-the-first-verse-of-the-fun-song.31408/full" data-background-position="98% 2%" data-background-size="15%">
-<h2>Workflow Benefit #4: Traceability with Version Control<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i></h2>
+<h2>Workflow Benefit #4: Traceability with Version Control <a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a><i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i></h2>
 <ul>
 <li class="fragment"><p>No more file clutter: Replace <code>final_v3_revised_REAL_FINAL.Rmd</code> with clean version tracking</p></li>
 <li class="fragment"><p>Precise change history: Git tracks edits line by line — you know what changed, when, and why.</p></li>
@@ -750,7 +751,7 @@ Tinashe M. Tapera, Research Software Engineer
 <li class="fragment"><p>Safe collaboration: Work in parallel without overwriting each other’s code using branches and pull requests. Experimentation is encouraged</p></li>
 <li class="fragment"><p>Work with the garage door up: Share your process early, even if it’s not polished. GitHub lets collaborators see your progress and offer feedback or help sooner</p></li>
 </ul>
-</section>
+<aside></aside></section>
 <section id="section-7" class="slide level2" data-background-image="https://i.ytimg.com/vi/1PR-TaL6sGg/maxresdefault.jpg">
 <h2></h2>
 <div class="fragment" style="background: rgba(0, 0, 0, 0.7)">
@@ -778,12 +779,7 @@ Tinashe M. Tapera, Research Software Engineer
 <h2>I get it; it’s a lot 😰</h2>
 <div class="columns">
 <div class="column" style="width:35%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://raps-with-r.dev/images/repro_iceberg.png"></p>
-<figcaption>The reproducibility iceberg</figcaption>
-</figure>
-</div>
+<p><img data-src="https://raps-with-r.dev/images/repro_iceberg.png" alt="The reproducibility iceberg"> <a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a></p>
 </div><div class="column" style="width:65%;">
 <ul>
 <li class="fragment">It’s a learning process/investment with benefits accruing over time</li>
@@ -792,11 +788,11 @@ Tinashe M. Tapera, Research Software Engineer
 <li class="fragment">Labs that adopt reproducible workflows produce cleaner, more sustainable+trustworthy science.</li>
 </ul>
 </div></div>
-</section>
+<aside></aside></section>
 <section id="section-8" class="slide level2" data-background-image="./figs/excel_error2.png" data-background-size="40%" data-background-position="70% 10%">
 <h2></h2>
-<p>Labs that don’t…</p>
-</section>
+<p>Labs that don’t…<a href="#/footnotes" class="footnote-ref" id="fnref13" role="doc-noteref" data-footnote-href="#/fn13" onclick=""><sup>13</sup></a></p>
+<aside></aside></section>
 <section id="reproducible-collaboration-requires-compromise" class="slide level2">
 <h2>Reproducible collaboration requires compromise 🤝</h2>
 <div class="fragment">
@@ -931,7 +927,7 @@ They might want convenience.</p>
 <p><i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i></p>
 </div>
 </section>
-<section id="thanks-lets-discuss" class="slide level2" data-background-image="https://media1.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif" data-background-size="40%" data-background-position="40% 70%">
+<section id="thanks-lets-discuss" class="slide level2" data-background-image="https://media1.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif" data-background-size="35%" data-background-position="40% 80%">
 <h2>Thanks! Let’s discuss…</h2>
 <ul>
 <li class="fragment">Let’s build workflows that work for robust science — and for you.</li>
@@ -939,6 +935,24 @@ They might want convenience.</p>
 </ul>
 
 </section></section>
+<section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>https://www.nature.com/articles/533452a</p></li>
+<li id="fn2"><p>https://www.mdpi.com/2072-4292/17/9/1482</p></li>
+<li id="fn3"><p>https://www.nature.com/articles/sdata201618</p></li>
+<li id="fn4"><p>https://www.rc.fas.harvard.edu/cluster/publications/</p></li>
+<li id="fn5"><p>https://www.azquotes.com/quote/1463174</p></li>
+<li id="fn6"><p>https://www.cs.tufts.edu/~nr/cs257/archive/literate-programming/01-knuth-lp.pdf</p></li>
+<li id="fn7"><p>https://www.nature.com/articles/d41586-018-07196-1</p></li>
+<li id="fn8"><p>https://www.mdpi.com/2624-5175/6/1/1</p></li>
+<li id="fn9"><p>https://link.springer.com/article/10.3758/s13428-020-01436-x</p></li>
+<li id="fn10"><p>https://journals.lww.com/epidem/citation/2025/05000/advancing_reproducible_research_through_version.8.aspx</p></li>
+<li id="fn11"><p>https://link.springer.com/article/10.1186/1751-0473-8-7</p></li>
+<li id="fn12"><p>https://www.nature.com/articles/s41597-025-04451-9</p></li>
+<li id="fn13"><p>https://www.bbc.com/news/magazine-22223190</p></li>
+</ol>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -1155,129 +1169,111 @@ They might want convenience.</p>
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
             }
           }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
           }
-        } else {
-          return undefined;
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>

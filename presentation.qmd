@@ -25,11 +25,11 @@ filters:
    - include-code-files
 ---
 
-## Welcome 👋
+## Welcome 👋 {.smaller}
 
 ### Why we're here
 
-![](https://miro.medium.com/v2/resize:fit:908/1*AHK97CDrTLbTOE4qVYBtnQ.jpeg)
+![](https://miro.medium.com/v2/resize:fit:908/1*AHK97CDrTLbTOE4qVYBtnQ.jpeg)^[https://www.nature.com/articles/533452a]
 
 - Guide you to **sustainable**, **reproducible**, and **collaborative** data science workflows.
 - Orient you to cluster computing using **Harvard FASRC**, not your laptop.
@@ -52,7 +52,6 @@ filters:
 
 ---
 
-## Local & Manual Workflows are Fragile {.smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -82,7 +81,8 @@ filters:
 
 ## Where is the source of truth? 🧐
 
-![](./figs/paper_title.png)
+![](./figs/paper_title.png)^[https://www.mdpi.com/2072-4292/17/9/1482]
+
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -105,7 +105,7 @@ filters:
 - Narrate your thinking with **notebooks**
 - Track your work with **Git**
 - Save on technical debt by investing in robust systems
-- ![](https://libapps.s3.amazonaws.com/accounts/310452/images/FAIR_data_principles.jpg)
+- ![](https://libapps.s3.amazonaws.com/accounts/310452/images/FAIR_data_principles.jpg)^[https://www.nature.com/articles/sdata201618]
 
 
 ---
@@ -159,7 +159,7 @@ filters:
 
 ## Workflow Benefit #1: Efficiency with High Performance Compute Clusters<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> {.smaller background-image="https://media.tenor.com/PkFTmY4Ac4MAAAAM/spongebob-squarepants.gif" background-position="95% 90%" background-size="20%"}
 
-> [FASRC is a high performance computing resource whose professional responsibility is to save you (and your data) from yourself]{.yellow style="background: rgba(0, 0, 0, 0.7)"}
+> [FASRC is a high performance computing resource whose professional responsibility is to save you (and your data) from yourself ^[https://www.rc.fas.harvard.edu/cluster/publications/]]{.yellow style="background: rgba(0, 0, 0, 0.7)"}
 
 - OpenOnDemand [sessions persist]{.green} as long as the job is specified
 - File permissions mechanisms are [specific and deliberate]{.green}
@@ -212,20 +212,22 @@ filters:
 
 ## Literate Programming with Notebooks🖼️
 
-> "💡Good documentation is like a love letter to your future self"
+> "💡Documentation is like a love letter you write to your future self" (Damien Conway) ^[https://www.azquotes.com/quote/1463174]
 
-- Literate programming is the use of intertwined written language to self-document and explain code.
+
+
+- (Knuth, 1984 ^[https://www.cs.tufts.edu/~nr/cs257/archive/literate-programming/01-knuth-lp.pdf]) Literate programming is the use of intertwined written language to self-document and explain code.
 
 - A program's source code is made primarily to be read and understood by other people, and secondarily to be executed by the computer.
 
-- In data science, we use **Quarto, RMarkdown, or JuPyter Notebooks** to combine:
+- In data science, we use notebook tools like **Quarto, RMarkdown, or JuPyter** to combine:
   - Narrative
   - Code
   - Outputs
 
 ---
 
-## Workflow Benefit #2: Transparency with Notebooks<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i>
+## Workflow Benefit #2: Transparency with Notebooks ^[https://www.nature.com/articles/d41586-018-07196-1] <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i>
 ::: {.columns}
 ::: {.column width="50%"}
 ![](/figs/example_rendered.png)
@@ -374,7 +376,7 @@ default:
 
 ---
 
-## Workflow Benefit #3: Modularity with path & package managers<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> {.smaller background-image="https://i.pinimg.com/474x/0b/f8/26/0bf8260956a55039f792eb382228991a.jpg" background-size="15%" background-position="80% 90%"}
+## Workflow Benefit #3: Modularity with path & package managers ^[https://www.mdpi.com/2624-5175/6/1/1] ^[https://link.springer.com/article/10.3758/s13428-020-01436-x]<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> <i class="nes-icon star is-empty is-small"></i> {.smaller background-image="https://i.pinimg.com/474x/0b/f8/26/0bf8260956a55039f792eb382228991a.jpg" background-size="15%" background-position="80% 90%"}
 
 - 👯**Collaboration:** Modular code is easier for teams to understand, reuse, and extend.
 - How can you make your code more modular?
@@ -446,7 +448,7 @@ Why Git?
 
 ---
 
-## Workflow Benefit #4: Traceability with Version Control<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> {.smaller background-image="https://www.gtplanet.net/forum/media/gif-the-first-verse-of-the-fun-song.31408/full" background-position="98% 2%" background-size="15%"}
+## Workflow Benefit #4: Traceability with Version Control ^[https://journals.lww.com/epidem/citation/2025/05000/advancing_reproducible_research_through_version.8.aspx] ^[https://link.springer.com/article/10.1186/1751-0473-8-7]<i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-medium"></i> <i class="nes-icon star is-empty is-small"></i> {.smaller background-image="https://www.gtplanet.net/forum/media/gif-the-first-verse-of-the-fun-song.31408/full" background-position="98% 2%" background-size="15%"}
 
 -	No more file clutter: Replace `final_v3_revised_REAL_FINAL.Rmd` with clean version tracking
 
@@ -496,7 +498,7 @@ fine so far
 :::{.columns}
 
 :::{.column width=35%}
-![The reproducibility iceberg](https://raps-with-r.dev/images/repro_iceberg.png)
+![The reproducibility iceberg](https://raps-with-r.dev/images/repro_iceberg.png) ^[https://www.nature.com/articles/s41597-025-04451-9]
 
 :::
 
@@ -515,7 +517,7 @@ fine so far
 
 ## {background-image="./figs/excel_error2.png" background-size="40%" background-position="70% 10%"}
 
-Labs that don't...
+Labs that don't...^[https://www.bbc.com/news/magazine-22223190]
 
 ---
 
@@ -609,7 +611,7 @@ Congratulations! You've earned all 5 stars
 
 ---
 
-## Thanks! Let's discuss... {background-image="https://media1.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif" background-size="40%" background-position="40% 70%"}
+## Thanks! Let's discuss... {background-image="https://media1.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif" background-size="35%" background-position="40% 80%"}
 
 - Let’s build workflows that work for robust science — and for you.
 - My goal is to enable _you_ to do your best work!
