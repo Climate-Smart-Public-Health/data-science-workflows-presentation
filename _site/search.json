@@ -1,0 +1,233 @@
+[
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Welcome 👋",
+    "text": "Welcome 👋\nWhy we’re here\n1\n\nGuide you to sustainable, reproducible, and collaborative data science workflows.\nOrient you to cluster computing using Harvard FASRC, not your laptop.\nIntroduce principles and tools that help you focus on science, not logistics."
+  },
+  {
+    "objectID": "index.html#meet-squidward",
+    "href": "index.html#meet-squidward",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Meet Squidward…",
+    "text": "Meet Squidward…\n\nDay 1 of grad school vs. Day ???\nSquidward is a graduate student who is excited to do the science\nEventually, Squidward becomes tired, overworked, demotivated, and hungry\nSquidward’s work quality suffers as he gets overwhelmed by grad school and he starts to take shortcuts\n\nNot documenting his work\nManually moving files\nHard-coding programming loops/recursion\nRunning long code on a slow laptop\nArbitrarily naming files and versions"
+  },
+  {
+    "objectID": "index.html#where-is-the-source-of-truth",
+    "href": "index.html#where-is-the-source-of-truth",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Where is the source of truth? 🧐",
+    "text": "Where is the source of truth? 🧐\n2\n\n\n\nClaim: title\nEvidence: data\nTruth: methods"
+  },
+  {
+    "objectID": "index.html#proposing-a-data-science-philosophy",
+    "href": "index.html#proposing-a-data-science-philosophy",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Proposing A Data Science Philosophy 💬",
+    "text": "Proposing A Data Science Philosophy 💬\n\nPrefer remote + reproducible over local + manual\nCode, not outputs, should be the source of truth\nNarrate your thinking with notebooks\nTrack your work with Git\nSave on technical debt by investing in robust systems\n3"
+  },
+  {
+    "objectID": "index.html#what-well-cover-today",
+    "href": "index.html#what-well-cover-today",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "What We’ll Cover Today 📋",
+    "text": "What We’ll Cover Today 📋\n\n\n\n\n\n\n\n\n\nPrinciple\nTool\nWhat You’ll Learn\n\n\n\n\n\nEfficiency\nFASRC\nRemote computing\n\n\n\nTransparency\nNotebooks\nNarrated and reproducible scientific analysis\n\n\n\nModularity\nhere() + renv\nRobust file paths & environment isolation\n\n\n\nTraceability\nGit + GitHub\nVersion control and team collaboration\n\n\n\nFlexibility\ngoogledrive + pins\nReproducible I/O with shared cloud data"
+  },
+  {
+    "objectID": "index.html#fasrc-logging-in-launching-rstudio",
+    "href": "index.html#fasrc-logging-in-launching-rstudio",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "FASRC: Logging In & Launching RStudio 🚀",
+    "text": "FASRC: Logging In & Launching RStudio 🚀\n\nGet on the VPN\nGo to the Open OnDemand site https://rcood.rc.fas.harvard.edu\nLog in with FASRC Account details\nLaunch a RStudio Server session\nCreate and save an R file (You can also download the example file 1_FASRC_step4_example.r)"
+  },
+  {
+    "objectID": "index.html#section-1",
+    "href": "index.html#section-1",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "",
+    "text": "Your work is now on a backed-up, high-performance server."
+  },
+  {
+    "objectID": "index.html#section-2",
+    "href": "index.html#section-2",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "",
+    "text": "OH NO‼️ MY INTERNET WENT DOWN/FIREFOX CRASHED/MY LAPTOP WAS EATEN BY NEMATOADS ‼️"
+  },
+  {
+    "objectID": "index.html#workflow-benefit-1-efficiency-with-high-performance-compute-clusters",
+    "href": "index.html#workflow-benefit-1-efficiency-with-high-performance-compute-clusters",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Workflow Benefit #1: Efficiency with High Performance Compute Clusters    ",
+    "text": "Workflow Benefit #1: Efficiency with High Performance Compute Clusters    \n\nFASRC is a high performance computing resource whose professional responsibility is to save you (and your data) from yourself 4 5\n\n\nOpenOnDemand sessions persist as long as the job is specified\nFile permissions mechanisms are specific and deliberate\nSoftware will (likely) never crash due to a mistake on your part\nYou will (likely) never break FASRC"
+  },
+  {
+    "objectID": "index.html#section-3",
+    "href": "index.html#section-3",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "",
+    "text": "Let’s go back to our work from yesterday… wait, what was I doing again…?"
+  },
+  {
+    "objectID": "index.html#section-4",
+    "href": "index.html#section-4",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "",
+    "text": "library(ggplot2)\nlibrary(dplyr)\n\nmodel &lt;- lm(mpg ~ wt + hp, data = mtcars)\nnew_data &lt;- data.frame(wt = c(2.5, 3.0, 3.5), hp = c(100, 150, 200))\npredictions &lt;- predict(model, newdata = new_data)\n\nplot &lt;- ggplot(new_data, aes(x = wt, y = hp)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"blue\") +\n  geom_text(aes(label = round(predictions, 2)), vjust = -1, color = \"red\") +\n  labs(title = \"Predicted MPG based on Weight and Horsepower\",\n       x = \"Weight (1000 lbs)\",\n       y = \"Horsepower\")\nprint(plot)\n\n\n---\ntitle: \"My fantastic analysis\"\nformat: \n  html:\n    self-contained: true\ndate: now\nauthor: \"Squidward P. Tentacles\"\n---\n\nIn this analysis I'm going to use the `mtcars` dataset to\ndemonstrate regression and prediction.\n\n## Libraries\n\nHere are the necessary libraries you'll need to replicate this...\n\n```{r}\nlibrary(ggplot2)\n```\n\n## Fitting the model\n\nI chose to use the `wt` an `hp` variables as predictors because blah blah blah...\n\n```{r}\nmodel &lt;- lm(mpg ~ wt + hp, data = mtcars)\n```\n\n## Predict on New Data\n\nI'm creating some new data to predict on...\n\n```{r}\nnew_data &lt;- data.frame(wt = c(2.5, 3.0, 3.5), hp = c(100, 150, 200))\npredictions &lt;- predict(model, newdata = new_data)\n```\n\nAnd plotting it with ggplot:\n```{r}\nplot &lt;- ggplot(new_data, aes(x = wt, y = hp)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"blue\") +\n  geom_text(aes(label = round(predictions, 2)), vjust = -1, color = \"red\") +\n  labs(title = \"Predicted MPG based on Weight and Horsepower\",\n       x = \"Weight (1000 lbs)\",\n       y = \"Horsepower\")\nplot\n```\n\n## Conclusion\n\nIn this notebook I ran an experiment and documented it so that next time\nI or someone else sees it they can know exactly what I did\nand why 😁"
+  },
+  {
+    "objectID": "index.html#literate-programming-with-notebooks-1",
+    "href": "index.html#literate-programming-with-notebooks-1",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Literate Programming with Notebooks🖼️",
+    "text": "Literate Programming with Notebooks🖼️\n\n“💡Documentation is like a love letter you write to your future self” (Damien Conway) 6\n\n\n(Knuth, 1984 7) Literate programming is the intertwining of written and machine language to self-document and explain code.\nA program’s source code is made primarily to be read and understood by other people, and secondarily to be executed by the computer.\nIn data science, we use notebook tools like Quarto, RMarkdown, or JuPyter to combine narrative, code, and outputs"
+  },
+  {
+    "objectID": "index.html#workflow-benefit-2-transparency-with-notebooks",
+    "href": "index.html#workflow-benefit-2-transparency-with-notebooks",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Workflow Benefit #2: Transparency with Notebooks 8     ",
+    "text": "Workflow Benefit #2: Transparency with Notebooks 8     \n\n\n\n\n\nNotebooks provide narrative context, code, and outputs in one place\nEnable others (and your future self) to understand and reproduce your work\nGreat for supervisor meetings, review, and sharing\nEncourage “writing as thinking”"
+  },
+  {
+    "objectID": "index.html#notebooks-arent-just-for-code-outputs",
+    "href": "index.html#notebooks-arent-just-for-code-outputs",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Notebooks aren’t just for code outputs…",
+    "text": "Notebooks aren’t just for code outputs…\n\n\n\n\nReports in pdf, word, and html\n\n\n\n\n\n\n\nDashboards for data analysis\n\n\n\n\n\n\n\nMore dashboards\n\n\n\n\n\n\n\nEven more dashboards\n\n\n\n\n\n\n\nInteractive maps\n\n\n\n\n\n\n\nBlogs\n\n\n\n\n\n\n\nOrganizational websites\n\n\n\n\n\n\n\nBooks\n\n\n\n\n\n\n\nMore books\n\n\n\n\n\n\n\nManuscripts!\n\n\n\n\n\n\n\nA manuscrupt I’ve contributed to/authored\n\n\n\n\n🤯🤯🤯\nTHIS PRESENTATION IS A NOTEBOOK"
+  },
+  {
+    "objectID": "index.html#section-5",
+    "href": "index.html#section-5",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "",
+    "text": "Your lab mate is not convinced that lm() and glm() are equivalent in R, so you decide to demo it and share your notebook with them…"
+  },
+  {
+    "objectID": "index.html#modularity-in-data-science",
+    "href": "index.html#modularity-in-data-science",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Modularity in Data Science 🗃️",
+    "text": "Modularity in Data Science 🗃️\n\nOpen your analysis notebook\nRead data from an external URL\nShow that the two regression functions are equivalent\nShare the notebook so that they can try it for themselves (Download and and add 3_Modularity_step1_example3.qmd to your project and try to run it)"
+  },
+  {
+    "objectID": "index.html#organize-projects-with-here-configs-and-renv",
+    "href": "index.html#organize-projects-with-here-configs-and-renv",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Organize Projects with here(), configs, and renv",
+    "text": "Organize Projects with here(), configs, and renv\n\n\n\n\nUse here::here() instead of \"../\" or \"~/Downloads/\"\n\n\nlibrary(here)\nhere(\"data\", \"input.csv\")\n\n\n\nUse configs to manage paths outside of the project\nKeeps paths portable and self-documenting\nHelps build & maintain structured projects\n\n\n\ndefault:\n  data_dir: \"/nfs/shared/data\"\n  results_dir: \"/nfs/shared/results\"\n  madagascar:\n      shapefile: \"https://data.humdata.org/dataset/26fa506b-0727-4d9d-a590-d2abee21ee22/resource/ed94d52e-349e-41be-80cb-62dc0435bd34/download/mdg_adm_bngrc_ocha_20181031_shp.zip\"\n\n\nUse renv and/or conda to manage packages\nAllows you to document exact package versions and dependencies for each project\nStores package metadata in a text file that can be version controlled and shared with your project"
+  },
+  {
+    "objectID": "index.html#workflow-benefit-3-modularity-with-path-package-managers",
+    "href": "index.html#workflow-benefit-3-modularity-with-path-package-managers",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Workflow Benefit #3: Modularity with path & package managers 9 10    ",
+    "text": "Workflow Benefit #3: Modularity with path & package managers 9 10    \n\n👯 Collaboration: Modular code is easier for teams to understand, reuse, and extend.\nHow can you make your code more modular?\n\n🧭 Portability of location: Use tools like here() to manage file and document paths\n🏗 Portability of dependencies Use tools like renv or conda to manage package dependencies\n🎁 Portability of code components: Use functions and modules so that code can be reused and tested independently\n\n📈 Scalability: Modular workflows adapt easily to new data, collaborators, or computing environments."
+  },
+  {
+    "objectID": "index.html#section-6",
+    "href": "index.html#section-6",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "",
+    "text": "It’s time to publish your groundbreaking paper on the equivalence of glm and lm! You’ve run the analysis three times now: fantastic_analysis_v3.R, final_FINAL.Rmd, and FINAL_revised_with_comments_v2.qmd.\n\n\n\n\nDuring a meeting, the PI asks:\n\n\n\n\n“Can you show me what changed between the version we worked on 6 weeks ago and this one you sent me yesterday?”"
+  },
+  {
+    "objectID": "index.html#version-control-with-git-github",
+    "href": "index.html#version-control-with-git-github",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Version Control with Git & GitHub ",
+    "text": "Version Control with Git & GitHub \nWhy Git?\n\nTrack every change you make\nRecover and understand past versions\nCollaborate without fear"
+  },
+  {
+    "objectID": "index.html#version-control-with-git-github-1",
+    "href": "index.html#version-control-with-git-github-1",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Version Control with Git & GitHub ",
+    "text": "Version Control with Git & GitHub \n\nSet up your GitHub Account with secure PATs (Personal Access Token = Special Password 😉) with usethis::create_github_token()\nInitialize a git repository for your project with usethis::use_git()\nTrack some changes\n“Push” the changes to GitHub for backup and sharing with usethis::use_github()\nOpen GitHub to see your code reflected!\n\n\n\nBy far, the best resource for Git for R users is HappyGitWithR.com [^https://happygitwithr.com/hello-git]"
+  },
+  {
+    "objectID": "index.html#workflow-benefit-4-traceability-with-version-control",
+    "href": "index.html#workflow-benefit-4-traceability-with-version-control",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Workflow Benefit #4: Traceability with Version Control 11 12    ",
+    "text": "Workflow Benefit #4: Traceability with Version Control 11 12    \n\nNo more file clutter: Replace final_v3_revised_REAL_FINAL.Rmd with clean version tracking\nPrecise change history: Git tracks edits line by line — you know what changed, when, and why.\nIntentional work: Use git as a daily lab notebook where commits encourage reflection (what did I do today, and why?)\nSafe collaboration: Work in parallel without overwriting each other’s code using branches and pull requests. Experimentation is encouraged\nWork with the garage door up: Share your process early, even if it’s not polished. GitHub lets collaborators see your progress and offer feedback or help sooner"
+  },
+  {
+    "objectID": "index.html#section-7",
+    "href": "index.html#section-7",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "",
+    "text": "You’ve spent all of this time working on reproducibility, but your collaborators simply do not care for it…\n\n\n\n\n“This is so much overkill for a small analysis”\n\n\n\n\n“I’m not a computer scientist I really don’t care about any of this! I don’t want to learn a new package”\n\n\n\n\nDoing all of this is so slow! I can just use Excel, my old workflow has worked fine so far"
+  },
+  {
+    "objectID": "index.html#i-get-it-its-a-lot",
+    "href": "index.html#i-get-it-its-a-lot",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "I get it; it’s a lot 😰",
+    "text": "I get it; it’s a lot 😰\n\n\n 13\n\n\nIt’s a learning process/investment with benefits accruing over time\nAdopting these principles gradually is fine — start small, but start now.\nThese principles aren’t about using fancy tools — they’re about creating systems that are beneficial to your future self and your collaborators.\nLabs that adopt reproducible workflows produce cleaner, more sustainable+trustworthy science."
+  },
+  {
+    "objectID": "index.html#section-8",
+    "href": "index.html#section-8",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "",
+    "text": "Labs that don’t…14"
+  },
+  {
+    "objectID": "index.html#reproducible-collaboration-requires-compromise",
+    "href": "index.html#reproducible-collaboration-requires-compromise",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Reproducible collaboration requires compromise 🤝",
+    "text": "Reproducible collaboration requires compromise 🤝\n\nWe want reproducibility.\nThey might want convenience.\n\n\nYou can’t force everyone to use Git, FASRC, Quarto, etc. all the time\n\n\nYou can compromise — and still keep your workflow clean — by finding and implementing creative middle-ground solutions.\n\n\nFor e.g., the pins package 📌"
+  },
+  {
+    "objectID": "index.html#accessing-google-drive-with-pins",
+    "href": "index.html#accessing-google-drive-with-pins",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Accessing Google Drive with pins📌",
+    "text": "Accessing Google Drive with pins📌\n\nGoogle Drive (and friends) don’t neatly fit into the workflow (for reasons we’ve discussed)\nHow do you share data with outside Harvard collaborators?🧐\nHow do you couple your data science to other academic workflows?\npins solves this by providing versioned programmatic access to Google, Box, OneDrive etc.\nTreats data objects in R/Python/Javascript as “pins” and online locations as “pinup boards”"
+  },
+  {
+    "objectID": "index.html#accessing-google-drive-with-pins-1",
+    "href": "index.html#accessing-google-drive-with-pins-1",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Accessing Google Drive with pins📌",
+    "text": "Accessing Google Drive with pins📌\n\nCreate a board in R from the Google Drive\n\n\ninstall.packages(\"pins\")\ninstall.packages(\"googledrive\")\ndrive_id &lt;- googledrive::as_id(\"https://drive.google.com/drive/folders/1MYoaffvU9ogu7nFo3Whz7XYVG1fq4wHY?usp=share_link\")\nboard &lt;- board_gdrive(drive_id, versioned=TRUE)\n\n\nCreate and write a pin for your glm() results\n\n\npin_write(board, salary_glm_model, name=\"glm results\", \"Showing that the glm results are identical to the lm results\")"
+  },
+  {
+    "objectID": "index.html#workflow-benefit-5-flexibility-with-pins-and-google-drive",
+    "href": "index.html#workflow-benefit-5-flexibility-with-pins-and-google-drive",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Workflow Benefit #5: Flexibility with pins and Google Drive    ",
+    "text": "Workflow Benefit #5: Flexibility with pins and Google Drive    \n\npins gives you:\n\n🚀 Benefits of programmatic data science in R or Python\n🤝 Collaboration of Google Drive\n🪢 Coupling between your data science and the rest of your academic responsibilities\n\nYour laptop is your personal desk ⌨️\nFASRC is your wet lab bench 🔬🧪\nGitHub is your collection of open, organically-growing, precise, lab notebooks 📚\nGoogle Drive is your PII-safe vault for data 🗄 or bulletin board for outputs 📌"
+  },
+  {
+    "objectID": "index.html#what-belongs-where",
+    "href": "index.html#what-belongs-where",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "What Belongs Where?",
+    "text": "What Belongs Where?\n\n\n\n\n\n\n\nType of Data\nGo To\n\n\n\n\n🔐 Raw data from collaborators\nGoogle Drive & FASRC\n\n\n💻 Analysis code (.R, .Rmd, .qmd, .py, plain text files)\nFASRC & GitHub\n\n\n🖼️ Notebooks, tables, plots, etc. for review (PII-safe)\nGitHub or Google Drive\n\n\n⚠️ Any form of sensitive intermediate outputs or code\nGoogle Drive\n\n\n🧼 Cleaned/shareable datasets\nFASRC always; Google Drive if PII; Dataverse if anonymized"
+  },
+  {
+    "objectID": "index.html#recap-your-sustainable-stack",
+    "href": "index.html#recap-your-sustainable-stack",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Recap: Your Sustainable Stack",
+    "text": "Recap: Your Sustainable Stack\n\n\n\n\n\n\n\n\nPrinciple\nTool\nWhat We Learned\n\n\n\n\nEfficiency\nFASRC\nRemote computing\n\n\nTransparency\nNotebooks\nNarrated and reproducible scientific analysis\n\n\nModularity\nhere() + renv\nRobust file paths & environment isolation\n\n\nTraceability\nGit + GitHub\nVersion control and team collaboration\n\n\nFlexibility\ngoogledrive + pins\nReproducible I/O with shared cloud data\n\n\n\n\n\nCongratulations! You’ve earned all 5 stars"
+  },
+  {
+    "objectID": "index.html#thanks-lets-discuss",
+    "href": "index.html#thanks-lets-discuss",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Thanks! Let’s discuss…",
+    "text": "Thanks! Let’s discuss…\n\nLet’s build workflows that work for robust science — and for you.\nMy goal is to enable you to do your best work!"
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Reproducible Data Science Workflows in Climate-Smart Public Health Research🌍🤖📊",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nhttps://www.nature.com/articles/533452a\nhttps://www.mdpi.com/2072-4292/17/9/1482\nhttps://www.nature.com/articles/sdata201618\nhttps://www.rc.fas.harvard.edu/cluster/publications/\nhttps://docs.rc.fas.harvard.edu\nhttps://www.azquotes.com/quote/1463174\nhttps://www.cs.tufts.edu/~nr/cs257/archive/literate-programming/01-knuth-lp.pdf\nhttps://www.nature.com/articles/d41586-018-07196-1\nhttps://www.mdpi.com/2624-5175/6/1/1\nhttps://link.springer.com/article/10.3758/s13428-020-01436-x\nhttps://journals.lww.com/epidem/citation/2025/05000/advancing_reproducible_research_through_version.8.aspx\nhttps://link.springer.com/article/10.1186/1751-0473-8-7\nhttps://www.nature.com/articles/s41597-025-04451-9\nhttps://www.bbc.com/news/magazine-22223190"
+  }
+]
